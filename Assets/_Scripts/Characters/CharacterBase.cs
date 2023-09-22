@@ -17,7 +17,7 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected int _initialMovementSpeed = 10;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _maxHealth = _initialHealth;
         _currentHealth = _maxHealth;
