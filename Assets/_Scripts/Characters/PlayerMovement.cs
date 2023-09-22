@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private Player _player;
     private Animator _animator;
+    private Rigidbody2D _rigidbody2D;
 
     private void Awake()
     {
         _player = GetComponent<Player>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
     }
     
