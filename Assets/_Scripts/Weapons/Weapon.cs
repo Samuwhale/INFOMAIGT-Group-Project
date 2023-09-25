@@ -6,6 +6,7 @@ public abstract class Weapon : MonoBehaviour
 {
     public int attackPower;
     public float attackSpeed;
+    
 
     protected int level;
 
