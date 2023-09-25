@@ -47,7 +47,7 @@ public class Scythe : Weapon
         {
             SpawnWeapon();
 
-            yield return new WaitForSeconds(weaponAttackSpeed);
+            yield return new WaitForSeconds(weaponAttackDelay);
         }
     }
 }

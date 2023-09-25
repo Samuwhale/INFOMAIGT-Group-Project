@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,19 @@ public class Player : CharacterBase
     {
         base.Awake();
         scythe = GetComponent<Scythe>();
-        scythe.Activate();
+        
         
         forcefield = GetComponent<Forcefield>();
-        forcefield.Activate();
+        
         
         throwingDagger = GetComponent<ThrowingDagger>();
+     
+    }
+
+    private void Start()
+    {
+        scythe.Activate();
+        forcefield.Activate();
         throwingDagger.Activate();
-        
-        
     }
 }

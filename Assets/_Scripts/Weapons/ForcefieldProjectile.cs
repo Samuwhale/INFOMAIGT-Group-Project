@@ -16,7 +16,7 @@ public class ForcefieldProjectile : MonoBehaviour
     private void Update()
     {
         // rotate sprite
-        spriteRenderer.transform.RotateAround(Vector3.forward, rotationSpeed * Time.deltaTime);
+        spriteRenderer.transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
     
     

@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttackPower: 5
-  baseAttackSpeed: 5
+  baseAttackDelay: 1.2
   Weapon: {fileID: 7631301855099727841, guid: 864e2d4b6920c4b45a9a43cbfe5f8453, type: 3}
 --- !u!114 &834093861
 MonoBehaviour:
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttackPower: 5
-  baseAttackSpeed: 5
+  baseAttackDelay: 5
   Weapon: {fileID: 5469194157352834997, guid: 832f39f1763bc49ad83ca319baade501, type: 3}
 --- !u!114 &834093862
 MonoBehaviour:
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttackPower: 5
-  baseAttackSpeed: 5
+  baseAttackDelay: 2
   Weapon: {fileID: 5519089696584957711, guid: dd0d9532f2a154e12858e6d31ff60bed, type: 3}
 --- !u!1 &927833316
 GameObject:

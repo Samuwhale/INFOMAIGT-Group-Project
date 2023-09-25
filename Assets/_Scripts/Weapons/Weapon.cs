@@ -1,36 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] protected int baseAttackPower;
-    [SerializeField] protected float baseAttackSpeed;
+    [FormerlySerializedAs("baseAttackSpeed")] [SerializeField] protected float baseAttackDelay;
     protected int weaponAttackPower;
-    protected float weaponAttackSpeed;
+    protected float weaponAttackDelay;
 
     CharacterBase weaponOwner;
     
     public int GetWeaponAttackPower() => weaponAttackPower;
-    public float GetWeaponAttackSpeed() => weaponAttackSpeed;
+    public float GetWeaponAttackSpeed() => weaponAttackDelay;
     
 
     protected int level;
 
     private void Awake()
     {
-        weaponOwner = GetComponent<CharacterBase>();
+        
         level = 1;
-        weaponAttackPower = weaponOwner.GetAttackPower() + baseAttackPower;
-        weaponAttackSpeed = weaponOwner.GetAttackSpeed() + baseAttackSpeed;
+        
+
     }
 
+    private void InitializeWeaponValues()
+    {
+        weaponOwner = GetComponent<CharacterBase>();
+        
+        // the higher the attack power of the owner, the higher the weapon power.
+        weaponAttackPower = weaponOwner.GetAttackPower() + baseAttackPower;
+        
+        // the higher the attack speed (base of 100) of the owner, the lower the delay.
+        // (200 attack speed in owner = 50% of original delay)
+        // the weapon base attack speed is in seconds. So a weapon attack speed of 5 = 5 seconds in between attacks.
+        weaponAttackDelay = Mathf.Clamp(baseAttackDelay * 100/weaponOwner.GetAttackSpeed(), 0.1f, 100f);
+        Debug.Log($"Weapon attack delay: {weaponAttackDelay}");
+    }
+    
     public virtual void Attack() { }
     public virtual void LevelUp() { }
 
     public void Activate()
     {
+        InitializeWeaponValues();
+        
         StartCoroutine(Initialize());
     }
 

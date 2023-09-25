@@ -5,13 +5,10 @@ using UnityEngine;
 public class ThrowingDagger : Weapon
 {
     public GameObject Weapon;
-    
-    public override void Attack()
-    {
 
-    }
+    public override void Attack() { }
 
-    public override void LevelUp() 
+    public override void LevelUp()
     {
         switch (level)
         {
@@ -19,7 +16,7 @@ public class ThrowingDagger : Weapon
                 break;
             case 2:
                 break;
-             case 3:
+            case 3:
                 break;
             case 4:
                 break;
@@ -34,7 +31,7 @@ public class ThrowingDagger : Weapon
 
     private void SpawnWeapon()
     {
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = transform.position;
         Instantiate(Weapon, pos, Quaternion.identity);
     }
 
@@ -44,7 +41,7 @@ public class ThrowingDagger : Weapon
         {
             SpawnWeapon();
 
-            yield return new WaitForSeconds(weaponAttackSpeed);
+            yield return new WaitForSeconds(weaponAttackDelay);
         }
     }
 }
