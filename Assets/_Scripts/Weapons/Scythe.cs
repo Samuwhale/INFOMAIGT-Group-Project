@@ -38,7 +38,7 @@ public class Scythe : Weapon
         // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 dir = (Vector3)GetComponent<PlayerMovement>().LastPlayerDirection;
         float rot = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
-        Instantiate(Weapon, pos + dir, Quaternion.Euler(0, 0, rot + 90));
+        Instantiate(Weapon, pos + dir, Quaternion.Euler(0, 0, rot + 90), transform);
     }
 
     protected override IEnumerator Initialize()

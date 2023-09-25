@@ -6,8 +6,9 @@ public class Player : CharacterBase
 {
     // SEE BASE CLASS! Lot of things are implemented there (so that the enemies can also inherit from it)
 
-    Weapon scythe;
-    Weapon forcefield;
+    private Weapon scythe;
+    private Weapon forcefield;
+    private Weapon throwingDagger;
 
     protected override void Awake()
     {
@@ -17,5 +18,10 @@ public class Player : CharacterBase
         
         forcefield = GetComponent<Forcefield>();
         forcefield.Activate();
+        
+        throwingDagger = GetComponent<ThrowingDagger>();
+        throwingDagger.Activate();
+        
+        
     }
 }

@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Forcefield : Weapon
+public class ThrowingDagger : Weapon
 {
     public GameObject Weapon;
     
@@ -33,17 +32,19 @@ public class Forcefield : Weapon
         }
     }
 
-    
-
     private void SpawnWeapon()
     {
         Vector3 pos = gameObject.transform.position;
-        Instantiate(Weapon, pos, Quaternion.identity, transform);
+        Instantiate(Weapon, pos, Quaternion.identity);
     }
 
     protected override IEnumerator Initialize()
     {
-        SpawnWeapon();
-        yield break;
+        while (true)
+        {
+            SpawnWeapon();
+
+            yield return new WaitForSeconds(weaponAttackSpeed);
+        }
     }
 }

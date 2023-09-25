@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class ForcefieldProjectile : MonoBehaviour
 {
-    [FormerlySerializedAs("speed")] [SerializeField] float rotationSpeed = 30f;
+    [SerializeField] float rotationSpeed = .5f;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
