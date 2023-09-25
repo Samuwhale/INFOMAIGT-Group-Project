@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialHealth: 100
   _initialAttackPower: 100
+  _initialAttackSpeed: 100
   _initialDefencePower: 100
   _initialMovementSpeed: 5
 --- !u!70 &834093858
@@ -482,8 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483872c8b1490104c8925030156ea63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 5
-  attackSpeed: 5
+  baseAttackPower: 5
+  baseAttackSpeed: 5
   Weapon: {fileID: 7631301855099727841, guid: 864e2d4b6920c4b45a9a43cbfe5f8453, type: 3}
 --- !u!1 &927833316
 GameObject:

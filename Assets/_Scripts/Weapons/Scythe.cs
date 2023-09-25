@@ -6,9 +6,6 @@ public class Scythe : Weapon
 {
     public GameObject Weapon;
     
-    
-
-
     public override void Attack()
     {
 
@@ -50,7 +47,7 @@ public class Scythe : Weapon
         {
             SpawnWeapon();
 
-            yield return new WaitForSeconds(attackSpeed);
+            yield return new WaitForSeconds(weaponAttackSpeed);
         }
     }
 }
