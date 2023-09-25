@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Player _player;
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
+    private Level _level;
     public Vector2 LastPlayerDirection { get; private set; }
 
     private void Awake()
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
         _player = GetComponent<Player>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        _level = GetComponent<Level>();
     }
     
     private Vector2 GetInput()
@@ -52,8 +54,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       float moveX = GetInputNormalized().x;
-       float moveY = GetInputNormalized().y;
+        if (_level.levelUpMenuOpen)
+        {
+            return;
+        }
+        float moveX = GetInputNormalized().x;
+        float moveY = GetInputNormalized().y;
        
         SetAnimatorValues(moveX, moveY);
 
