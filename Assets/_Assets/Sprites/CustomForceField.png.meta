@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68beef8b2488ddc419e3b440659919ef
+guid: d6b9b2e593a494236b8a4dbd80a53b25
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smear 01 Horizontal 1_0
+      name: CustomForceField_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7168bf027bd4b43bcd9025f7f9674d
-      internalID: -17933997
+      spriteID: d281967f379274ff8bd07a121580c07b
+      internalID: 1160709651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smear 01 Horizontal 1_1
+      name: CustomForceField_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe945156ee11448996d5c397ab59fe0
-      internalID: 2065938620
+      spriteID: 1108438e8d6cf4d748b15eb4dcf19d22
+      internalID: 1307672908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smear 01 Horizontal 1_2
+      name: CustomForceField_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,41 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86cf30919069447bdabf9e4491e6af69
-      internalID: 1371890425
+      spriteID: 6ade53fa4f3a74cc18402e0e56325880
+      internalID: 434698450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smear 01 Horizontal 1_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6854cdf50ec964f158bc7c3e908f5c4c
-      internalID: -1150748866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smear 01 Horizontal 1_4
+      name: CustomForceField_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +187,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 832616068ef324303b8e460e38b2da3b
-      internalID: -1271184156
+      spriteID: e899df480c7994881bb95e2c4ea94745
+      internalID: 1168276455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CustomForceField_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4705e0af55b4ce6a81a908e3fd603a
+      internalID: -485684229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CustomForceField_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278d028e6ff9f4e6b9bbcd823cea88a9
+      internalID: -792997912
       vertices: []
       indices: 
       edges: []
@@ -225,11 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Smear 01 Horizontal 1_0: -17933997
-      Smear 01 Horizontal 1_1: 2065938620
-      Smear 01 Horizontal 1_2: 1371890425
-      Smear 01 Horizontal 1_3: -1150748866
-      Smear 01 Horizontal 1_4: -1271184156
+      CustomForceField_0: 1160709651
+      CustomForceField_1: 1307672908
+      CustomForceField_2: 434698450
+      CustomForceField_3: 1168276455
+      CustomForceField_4: -485684229
+      CustomForceField_5: -792997912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
