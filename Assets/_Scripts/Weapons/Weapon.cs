@@ -38,7 +38,6 @@ public abstract class Weapon : MonoBehaviour
         // (200 attack speed in owner = 50% of original delay)
         // the weapon base attack speed is in seconds. So a weapon attack speed of 5 = 5 seconds in between attacks.
         weaponAttackDelay = Mathf.Clamp(baseAttackDelay * 100/weaponOwner.GetAttackSpeed(), 0.1f, 100f);
-        Debug.Log($"Weapon attack delay: {weaponAttackDelay}");
     }
     
     public virtual void Attack() { }
@@ -49,6 +48,8 @@ public abstract class Weapon : MonoBehaviour
         InitializeWeaponValues();
         
         StartCoroutine(Initialize());
+        
+        Debug.Log($"Weapon {this} activated, with attack power {weaponAttackPower} and attack delay {weaponAttackDelay}");
     }
 
     protected abstract IEnumerator Initialize();
