@@ -31,7 +31,7 @@ public class Level : MonoBehaviour
         level = 0;
         levelUpMenuOpen = false;
         _player = GetComponent<Player>();
-        GetExp(1);
+        // GetExp(1); // for testing
     }
 
     public void GetExp(int amount)

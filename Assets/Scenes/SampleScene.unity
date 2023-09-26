@@ -433,7 +433,7 @@ MonoBehaviour:
   baseAttackPower: 5
   baseAttackDelay: 2
   level: 0
-  weaponData: {fileID: 11400000, guid: 80c87f7a858eebf4fae89b67d8379e19, type: 2}
+  weaponData: {fileID: 0}
   Weapon: {fileID: 5519089696584957711, guid: dd0d9532f2a154e12858e6d31ff60bed, type: 3}
 --- !u!114 &42304444
 MonoBehaviour:
@@ -450,7 +450,7 @@ MonoBehaviour:
   baseAttackPower: 5
   baseAttackDelay: 5
   level: 0
-  weaponData: {fileID: 11400000, guid: b7cd05761efa17543bdd93f742245272, type: 2}
+  weaponData: {fileID: 0}
   Weapon: {fileID: 5469194157352834997, guid: 832f39f1763bc49ad83ca319baade501, type: 3}
 --- !u!114 &42304445
 MonoBehaviour:
@@ -467,7 +467,7 @@ MonoBehaviour:
   baseAttackPower: 5
   baseAttackDelay: 1.2
   level: 0
-  weaponData: {fileID: 11400000, guid: cc4db135e1e19d44385ab90ef113c1cf, type: 2}
+  weaponData: {fileID: 0}
   Weapon: {fileID: 7631301855099727841, guid: 864e2d4b6920c4b45a9a43cbfe5f8453, type: 3}
 --- !u!50 &42304446
 Rigidbody2D:
@@ -1038,7 +1038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &218792668
 RectTransform:
   m_ObjectHideFlags: 0
