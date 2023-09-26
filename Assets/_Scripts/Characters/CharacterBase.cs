@@ -11,6 +11,8 @@ public class CharacterBase : MonoBehaviour
     protected int _attackSpeed;
     protected int _defencePower;
     protected float _movementSpeed;
+
+    public HP_Bar hp_bar;
     
     [SerializeField] protected int _initialHealth = 100;
     [SerializeField] protected int _initialAttackPower = 100;
@@ -28,6 +30,8 @@ public class CharacterBase : MonoBehaviour
         _defencePower = _initialDefencePower;
         _movementSpeed = _initialMovementSpeed;
         
+        hp_bar.SetMaxHealth(_maxHealth);
+        hp_bar.SetHealth(_currentHealth);
     }
 
     
@@ -39,7 +43,7 @@ public class CharacterBase : MonoBehaviour
             Die();
         }
         
-        _currentHealth -= damage;
+        hp_bar.SetHealth(_currentHealth);
     }
     
     public void IncreaseMaxHealth(int amount)
