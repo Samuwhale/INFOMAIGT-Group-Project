@@ -30,4 +30,14 @@ public class Player : CharacterBase
         forcefield.Activate();
         throwingDagger.Activate();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "enemy")
+        {
+            Enemy _enemy = collision.gameObject.GetComponent<Enemy>();
+            TakeDamage(_enemy.GetAttackPower());
+        }
+    }
 }
