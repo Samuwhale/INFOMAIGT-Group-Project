@@ -16,15 +16,12 @@ public abstract class Weapon : MonoBehaviour
     public int GetWeaponAttackPower() => weaponAttackPower;
     public float GetWeaponAttackSpeed() => weaponAttackDelay;
     
-
-    protected int level;
+    public int level;
+    public WeaponData weaponData;
 
     private void Awake()
     {
-        
         level = 1;
-        
-
     }
 
     private void InitializeWeaponValues()

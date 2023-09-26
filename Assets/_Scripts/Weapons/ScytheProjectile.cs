@@ -6,6 +6,8 @@ public class ScytheProjectile : MonoBehaviour
 {
     [SerializeField] float destroyDelay = 1f;
     const float speed = 500f;
+    public float instakillChance = 0f;
+    public int attack = 5;
 
     private void Awake()
     {
