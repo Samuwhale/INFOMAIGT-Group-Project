@@ -86,7 +86,7 @@ public class Level : MonoBehaviour
                 {
                     weaponID = Random.Range(0, WEAPONCOUNT);
                     weaponLevel = _player.GetWeaponLevel(weaponID);
-                    if (weaponLevel != WEAPONMAXLEVEL && !duplicates.Contains(weaponID))
+                    if (/*weaponLevel != WEAPONMAXLEVEL && */!duplicates.Contains(weaponID))
                         break;
                 }
                 duplicates.Add(weaponID);
