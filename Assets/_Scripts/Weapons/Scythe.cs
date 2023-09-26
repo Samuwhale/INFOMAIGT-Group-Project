@@ -5,31 +5,37 @@ using UnityEngine;
 public class Scythe : Weapon
 {
     public GameObject Weapon;
-    
-    public override void Attack()
-    {
-
-    }
 
     public override void LevelUp() 
     {
         switch (level)
         {
+            case 0:
+                // activate weapon: StartCoroutine(Initialize())
+                break;
             case 1:
+                Weapon.GetComponent<ScytheProjectile>().attack += 5;
                 break;
             case 2:
+                // increase weapon size
+                Weapon.transform.localScale *= 1.2f;
                 break;
-             case 3:
+            case 3:
+                Weapon.GetComponent<ScytheProjectile>().instakillChance += 0.02f;
                 break;
             case 4:
+                Weapon.GetComponent<ScytheProjectile>().attack += 10;
                 break;
             case 5:
+                Weapon.transform.localScale *= 1.3f;
                 break;
             case 6:
+                Weapon.GetComponent<ScytheProjectile>().instakillChance += 0.03f;
                 break;
-            case 7:
+            default:
                 break;
         }
+        level++;
     }
 
     private void SpawnWeapon()

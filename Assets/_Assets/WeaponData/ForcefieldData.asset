@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d424077c9b1efa3449443db7c11d416e, type: 3}
+  m_Name: ForcefieldData
+  m_EditorClassIdentifier: 
+  weaponName: Forcefield
+  weaponId: 1
+  icon: {fileID: 1160709651, guid: d6b9b2e593a494236b8a4dbd80a53b25, type: 3}
+  description:
+  - Does things.
+  - Whatever it does, now it does it better
+  - Whatever it does, now it does it better
+  - Whatever it does, now it does it better
+  - Whatever it does, now it does it better
+  - Whatever it does, now it does it better
+  - Whatever it does, now it does it better
