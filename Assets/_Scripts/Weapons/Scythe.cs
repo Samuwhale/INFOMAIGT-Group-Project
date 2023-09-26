@@ -35,6 +35,7 @@ public class Scythe : Weapon
             default:
                 break;
         }
+        level++;
     }
 
     private void SpawnWeapon()

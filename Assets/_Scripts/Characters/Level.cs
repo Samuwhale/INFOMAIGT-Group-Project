@@ -72,10 +72,13 @@ public class Level : MonoBehaviour
     private void OpenLevelUpMenu()
     {
         _levelUpMenu.SetActive(true);
+        List<int> duplicates = new List<int>(3);
+        int slotsOpen = 3; // optional upgrade for 4 slots
+        // TODO: add cases for if less than 3 options are available
 
-        for (int i = 0; i < slots; i++)
+        for (int i = 0; i < slotsOpen; i++)
         {
-            if (Random.Range(0, 10) <= 4) // 6/10 chance for a weapon, 4/10 for a item
+            if (true)//Random.Range(0, 10) <= 4) // 6/10 chance for a weapon, 4/10 for a item
             {
                 int weaponID = 0;
                 int weaponLevel = 0;
@@ -83,9 +86,10 @@ public class Level : MonoBehaviour
                 {
                     weaponID = Random.Range(0, WEAPONCOUNT);
                     weaponLevel = _player.GetWeaponLevel(weaponID);
-                    if (weaponLevel != WEAPONMAXLEVEL)
+                    if (weaponLevel != WEAPONMAXLEVEL && !duplicates.Contains(weaponID))
                         break;
                 }
+                duplicates.Add(weaponID);
 
                 WeaponData data = _player.GetWeaponData(weaponID);
                 image[i].sprite = data.icon;
