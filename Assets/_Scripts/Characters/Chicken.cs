@@ -5,16 +5,15 @@ using UnityEngine;
 public class Chicken : Enemy
 {
     // Start is called before the first frame update
-    private Rigidbody2D _rigidbody2D;
     private float _shootingDistance;
     private bool justShot;
+    [SerializeField] private Transform Egg;
 
     [SerializeField] float _initialShootingDistance = 5;
 
     protected override void Awake()
     {
         base.Awake();
-        _rigidbody2D = GetComponent<Rigidbody2D>();
         _shootingDistance = _initialShootingDistance;
     }
 
@@ -26,8 +25,19 @@ public class Chicken : Enemy
     private void ShootEgg()
     {
         Debug.Log("Shoot egg");
-        justShot = true;
+        Transform eggTransform = Instantiate(Egg, this.transform.position, Quaternion.identity);
+        eggTransform.GetComponent<Egg>().SetDirection(GetPlayerDirection());
+
+        StartCoroutine(ShootDelay());
         return;
+    }
+
+    private IEnumerator ShootDelay()
+    {
+        justShot = true;
+        yield return new WaitForSeconds(_attackSpeed);
+        Debug.Log("delay over");
+        justShot = false;
     }
 
     // Update is called once per frame
@@ -42,6 +52,8 @@ public class Chicken : Enemy
                 this.MoveCharacter(dir.x, dir.y);
                 return;
             }
+
+            this.MoveCharacter(0, 0);
 
             if (!justShot)
             {
