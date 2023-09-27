@@ -31,7 +31,7 @@ public class Level : MonoBehaviour
         level = 0;
         levelUpMenuOpen = false;
         _player = GetComponent<Player>();
-        // GetExp(1); // for testing
+        //GetExp(1); // for testing
     }
 
     public void GetExp(int amount)
@@ -95,6 +95,7 @@ public class Level : MonoBehaviour
                 image[i].sprite = data.icon;
                 nameText[i].text = data.weaponName;
                 levelText[i].text = "Level " + weaponLevel;
+                if (weaponLevel == 0) levelText[i].text = "New";
                 description[i].text = data.description[weaponLevel];
 
                 button[i].onClick.AddListener(delegate {
