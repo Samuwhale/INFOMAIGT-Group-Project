@@ -67,5 +67,15 @@ public class PlayerMovement : MonoBehaviour
         
         UpdateLastPlayerDirection();
 
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            _player.TakeDamage(20);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 }
