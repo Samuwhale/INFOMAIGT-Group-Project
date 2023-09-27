@@ -72,5 +72,10 @@ public class PlayerMovement : MonoBehaviour
             _player.TakeDamage(20);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 }
