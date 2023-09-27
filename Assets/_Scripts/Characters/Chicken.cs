@@ -24,7 +24,6 @@ public class Chicken : Enemy
 
     private void ShootEgg()
     {
-        Debug.Log("Shoot egg");
         Transform eggTransform = Instantiate(Egg, this.transform.position, Quaternion.identity);
         eggTransform.GetComponent<Egg>().SetDirection(GetPlayerDirection());
 
@@ -36,7 +35,6 @@ public class Chicken : Enemy
     {
         justShot = true;
         yield return new WaitForSeconds(_attackSpeed);
-        Debug.Log("delay over");
         justShot = false;
     }
 

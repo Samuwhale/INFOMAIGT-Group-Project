@@ -66,15 +66,21 @@ public class Enemy : CharacterBase
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "player")
         {
             ApplyKnockBack();
+            TakeDamage(100);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
+    }
+
+    public override void Die()
+    {
+        Destroy(this.gameObject);
     }
 }
