@@ -10,7 +10,7 @@ public class CharacterBase : MonoBehaviour
     protected int _attackPower;
     protected int _attackSpeed;
     protected int _defencePower;
-    protected float _movementSpeed;
+    public float _movementSpeed;
 
     public HP_Bar hp_bar;
     

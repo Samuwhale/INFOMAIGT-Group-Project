@@ -22,7 +22,7 @@ public class Level : MonoBehaviour
 
     private Player _player;
     private int WEAPONCOUNT = 3;
-    private int ITEMCOUNT = 0;
+    private int ITEMCOUNT = 3;
     private int WEAPONMAXLEVEL = 7;
     private int ITEMMAXLEVEL = 5;
 
@@ -73,12 +73,13 @@ public class Level : MonoBehaviour
     {
         _levelUpMenu.SetActive(true);
         List<int> duplicates = new List<int>(3);
+        List<int> itemDuplicates = new List<int>(3);
         int slotsOpen = 3; // optional upgrade for 4 slots
         // TODO: add cases for if less than 3 options are available
 
         for (int i = 0; i < slotsOpen; i++)
         {
-            if (true)//Random.Range(0, 10) <= 4) // 6/10 chance for a weapon, 4/10 for a item
+            if (Random.Range(0, 10) <= 4) // 5/10 chance for a weapon, 5/10 for a item
             {
                 int weaponID = 0;
                 int weaponLevel = 0;
@@ -91,12 +92,12 @@ public class Level : MonoBehaviour
                 }
                 duplicates.Add(weaponID);
 
-                WeaponData data = _player.GetWeaponData(weaponID);
-                image[i].sprite = data.icon;
-                nameText[i].text = data.weaponName;
+                WeaponData weaponData = _player.GetWeaponData(weaponID);
+                image[i].sprite = weaponData.icon;
+                nameText[i].text = weaponData.weaponName;
                 levelText[i].text = "Level " + weaponLevel;
                 if (weaponLevel == 0) levelText[i].text = "New";
-                description[i].text = data.description[weaponLevel];
+                description[i].text = weaponData.description[weaponLevel];
 
                 button[i].onClick.AddListener(delegate {
                     _player.LevelUpWeapon(weaponID);
@@ -104,14 +105,25 @@ public class Level : MonoBehaviour
                     });
                 continue;
             }
+            // else branch
             int itemID = 0;
+            int itemLevel = 0;
             while (true)
             {
                 itemID = Random.Range(0, ITEMCOUNT);
-                if (_player.GetItemLevel(itemID) != ITEMMAXLEVEL)
+                itemLevel = _player.GetItemLevel(itemID);
+                if (/*itemLevel != ITEMMAXLEVEL*/!itemDuplicates.Contains(itemID))
                     break;
             }
-            
+            itemDuplicates.Add(itemID);
+
+            ItemData itemData = _player.GetItemData(itemID);
+            image[i].sprite = itemData.icon;
+            nameText[i].text = itemData.itemName;
+            levelText[i].text = "Level " + itemLevel;
+            if (itemLevel == 0) levelText[i].text = "New";
+            description[i].text = itemData.description[itemLevel];
+
             button[i].onClick.AddListener(delegate {
                     _player.LevelUpItem(itemID);
                     levelUpMenuOpen = false;
