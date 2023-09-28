@@ -131,4 +131,22 @@ public class Player : CharacterBase
         isAlive = false;
         gameoverscreen.Setup();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            Enemy _enemy = collision.gameObject.GetComponent<Enemy>();
+            TakeDamage(_enemy.GetAttackPower());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "enemy weapon")
+        {
+            TakeDamage(10);
+            Debug.Log("Took projectile damage, base 10");
+        }
+    }
 }

@@ -7,7 +7,7 @@ public class CharacterBase : MonoBehaviour
 {
     protected int _maxHealth;
     protected int _currentHealth;
-    protected int _attackPower;
+    public int _attackPower;
     protected int _attackSpeed;
     protected int _defencePower;
     public float _movementSpeed;
