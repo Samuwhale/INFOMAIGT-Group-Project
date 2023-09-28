@@ -13,6 +13,10 @@ public class Player : CharacterBase
 
     private Item shield, cheese, boots;
 
+    public gameoverscreen gameoverscreen;
+
+    public bool isAlive;
+
     protected override void Awake()
     {
         base.Awake();
@@ -34,6 +38,8 @@ public class Player : CharacterBase
         shield.Activate();
         cheese.Activate(); 
         boots.Activate();
+
+        isAlive = true;
     }
 
     public void LevelUpWeapon(int weaponID)
@@ -118,5 +124,11 @@ public class Player : CharacterBase
             case 2:
                 return boots.itemData;
         }
+    }
+
+    public override void Die()
+    {
+        isAlive = false;
+        gameoverscreen.Setup();
     }
 }

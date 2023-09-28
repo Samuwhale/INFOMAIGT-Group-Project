@@ -58,14 +58,18 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        float moveX = GetInputNormalized().x;
-        float moveY = GetInputNormalized().y;
-       
-        SetAnimatorValues(moveX, moveY);
 
-        MoveCharacter(moveX, moveY);
-        
-        UpdateLastPlayerDirection();
+        if (_player.isAlive)
+        {
+            float moveX = GetInputNormalized().x;
+            float moveY = GetInputNormalized().y;
+
+            SetAnimatorValues(moveX, moveY);
+
+            MoveCharacter(moveX, moveY);
+
+            UpdateLastPlayerDirection();
+        }
 
         if (Input.GetKeyDown(KeyCode.Period))
         {
