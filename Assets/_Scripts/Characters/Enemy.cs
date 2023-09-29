@@ -70,13 +70,17 @@ public class Enemy : CharacterBase
         if (collision.gameObject.tag == "player")
         {
             ApplyKnockBack();
-            TakeDamage(100);
+            //TakeDamage(100);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "player weapon")
+        {
+            TakeDamage(50);
+        }
     }
 
     public override void Die()
