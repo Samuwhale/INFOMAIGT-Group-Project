@@ -139,11 +139,11 @@ MonoBehaviour:
   _initialAttackPower: 10
   _initialAttackSpeed: 1
   _initialDefencePower: 100
-  _initialMovementSpeed: 2000
+  _initialMovementSpeed: 1000
   _initialKnockBackForce: 5
   _initialKnockBackTime: 0.5
   Egg: {fileID: 6975377070533058402, guid: eb2d28275f4865042a04769376ab04f9, type: 3}
-  _initialShootingDistance: 5
+  _initialShootingDistance: 8
 --- !u!70 &5521554028657212918
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_Direction: 1
 --- !u!50 &1821115161852396359
 Rigidbody2D:

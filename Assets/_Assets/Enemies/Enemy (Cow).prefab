@@ -55,7 +55,7 @@ MonoBehaviour:
   _initialAttackPower: 30
   _initialAttackSpeed: 100
   _initialDefencePower: 100
-  _initialMovementSpeed: 2000
+  _initialMovementSpeed: 750
   _initialKnockBackForce: 5
   _initialKnockBackTime: 0.5
 --- !u!70 &8709252656464643321
@@ -91,7 +91,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 1.2, y: 0.7}
   m_Direction: 1
 --- !u!50 &5571132950832571775
 Rigidbody2D:

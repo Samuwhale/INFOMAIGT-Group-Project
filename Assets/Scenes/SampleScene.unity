@@ -244,7 +244,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -553,7 +553,7 @@ MonoBehaviour:
   _initialAttackPower: 100
   _initialAttackSpeed: 100
   _initialDefencePower: 100
-  _initialMovementSpeed: 5
+  _initialMovementSpeed: 2000
   gameoverscreen: {fileID: 645376144}
   isAlive: 0
 --- !u!114 &42304449
@@ -1283,6 +1283,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218792667}
   m_CullTransparentMesh: 1
+--- !u!1 &236177221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236177223}
+  - component: {fileID: 236177222}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &236177222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236177221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0827908633ede094c86e459449b7a138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chicken: {fileID: 3014709901876189688, guid: 0dfd38828327f06449068d50ecc750c2, type: 3}
+  cow: {fileID: 416810241321179046, guid: 21a822ace24197245b4428e4a299b8dc, type: 3}
+  chickenInterval: 4
+  cowInterval: 1
+--- !u!4 &236177223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236177221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.65197, y: 0.5905545, z: -0.27916062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &345796393
 GameObject:
   m_ObjectHideFlags: 0
@@ -41676,3 +41724,4 @@ SceneRoots:
   - {fileID: 3994577574324199615}
   - {fileID: 431514512003605268}
   - {fileID: 1458432078}
+  - {fileID: 236177223}

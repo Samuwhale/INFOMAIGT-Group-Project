@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 3
-  speed: 3000
+  speed: 2000
   dir: {x: 0, y: 0}
 --- !u!58 &5462189103179300748
 CircleCollider2D:
@@ -84,7 +84,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.2
 --- !u!50 &7725843957359101998
 Rigidbody2D:
   serializedVersion: 4

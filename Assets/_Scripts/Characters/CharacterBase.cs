@@ -18,7 +18,7 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected int _initialAttackPower = 100;
     [SerializeField] protected int _initialAttackSpeed = 100;
     [SerializeField] protected int _initialDefencePower = 100;
-    [SerializeField] protected int _initialMovementSpeed = 10;
+    [SerializeField] protected int _initialMovementSpeed = 2500;
 
 
     protected virtual void Awake()

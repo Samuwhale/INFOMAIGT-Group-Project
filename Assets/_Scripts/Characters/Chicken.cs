@@ -34,7 +34,7 @@ public class Chicken : Enemy
     private IEnumerator ShootDelay()
     {
         justShot = true;
-        yield return new WaitForSeconds(_attackSpeed);
+        yield return new WaitForSeconds(_attackSpeed + 1);
         justShot = false;
     }
 
