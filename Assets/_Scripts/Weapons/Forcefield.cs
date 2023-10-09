@@ -5,17 +5,13 @@ using UnityEngine;
 
 public class Forcefield : Weapon
 {
-    public GameObject Weapon;
-    
-    public override void Attack()
-    {
-
-    }
-
     public override void LevelUp() 
     {
         switch (level)
         {
+            case 0:
+                StartCoroutine(Initialize());
+                break;
             case 1:
                 break;
             case 2:
@@ -31,14 +27,13 @@ public class Forcefield : Weapon
             case 7:
                 break;
         }
+        level++;
     }
-
-    
 
     private void SpawnWeapon()
     {
         Vector3 pos = gameObject.transform.position;
-        Instantiate(Weapon, pos, Quaternion.identity, transform);
+        Instantiate(weaponProjectile, pos, Quaternion.identity, transform);
     }
 
     protected override IEnumerator Initialize()

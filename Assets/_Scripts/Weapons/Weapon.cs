@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [SerializeField] protected GameObject weaponProjectile;
+
     [SerializeField] protected int baseAttackPower;
     [FormerlySerializedAs("baseAttackSpeed")] [SerializeField] protected float baseAttackDelay;
     protected int weaponAttackPower;
@@ -21,7 +23,7 @@ public abstract class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        level = 1;
+        level = 0;
     }
 
     private void InitializeWeaponValues()
@@ -43,8 +45,6 @@ public abstract class Weapon : MonoBehaviour
     public void Activate()
     {
         InitializeWeaponValues();
-        
-        StartCoroutine(Initialize());
         
         Debug.Log($"Weapon {this} activated, with attack power {weaponAttackPower} and attack delay {weaponAttackDelay}");
     }

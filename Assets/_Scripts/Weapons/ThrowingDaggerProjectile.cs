@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowingDaggerProjectile : MonoBehaviour
+public class ThrowingDaggerProjectile : Projectile
 {
     [SerializeField] float destroyDelay = 1f;
     [SerializeField] private float rotationSpeed = 0.5f;
@@ -19,11 +19,6 @@ public class ThrowingDaggerProjectile : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.up * upwardsForce, ForceMode2D.Impulse);
         rb.AddTorque(rotationSpeed, ForceMode2D.Impulse);
-    }
-
-    private void Update()
-    {
-        
     }
 
     IEnumerator DestroyTimer()

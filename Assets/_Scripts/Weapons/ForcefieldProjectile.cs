@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ForcefieldProjectile : MonoBehaviour
+public class ForcefieldProjectile : Projectile
 {
     [SerializeField] float rotationSpeed = .5f;
     private SpriteRenderer spriteRenderer;
@@ -18,6 +18,4 @@ public class ForcefieldProjectile : MonoBehaviour
         // rotate sprite
         spriteRenderer.transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
-    
-    
 }

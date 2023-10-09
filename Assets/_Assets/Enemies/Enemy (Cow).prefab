@@ -51,7 +51,7 @@ MonoBehaviour:
   _attackPower: 0
   _movementSpeed: 0
   hp_bar: {fileID: 297781917965107758}
-  _initialHealth: 100
+  _initialHealth: 50
   _initialAttackPower: 30
   _initialAttackSpeed: 100
   _initialDefencePower: 100

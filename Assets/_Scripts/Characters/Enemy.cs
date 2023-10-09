@@ -79,7 +79,8 @@ public class Enemy : CharacterBase
         //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "player weapon")
         {
-            TakeDamage(50);
+            Projectile _projectile = collision.gameObject.GetComponent<Projectile>();
+            TakeDamage(_projectile.GetAttackPower());
         }
     }
 

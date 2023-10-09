@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class Scythe : Weapon
 {
-    public GameObject Weapon;
-
     public override void LevelUp() 
     {
         switch (level)
         {
             case 0:
-                // activate weapon: StartCoroutine(Initialize())
+                weaponProjectile.transform.localScale = new Vector3(5, 5, 1);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(10);
+                StartCoroutine(Initialize());
                 break;
             case 1:
-                Weapon.GetComponent<ScytheProjectile>().attack += 5;
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(15);
                 break;
             case 2:
                 // increase weapon size
-                Weapon.transform.localScale *= 1.2f;
+                weaponProjectile.transform.localScale = new Vector3(6, 6, 1);
                 break;
             case 3:
-                Weapon.GetComponent<ScytheProjectile>().instakillChance += 0.02f;
+                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.02f);
                 break;
             case 4:
-                Weapon.GetComponent<ScytheProjectile>().attack += 10;
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(25);
                 break;
             case 5:
-                Weapon.transform.localScale *= 1.3f;
+                // increase weapon size
+                weaponProjectile.transform.localScale = new Vector3(8, 8, 1);
                 break;
             case 6:
-                Weapon.GetComponent<ScytheProjectile>().instakillChance += 0.03f;
+                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.05f);
                 break;
             default:
                 break;
@@ -44,7 +45,7 @@ public class Scythe : Weapon
         // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 dir = (Vector3)GetComponent<PlayerMovement>().LastPlayerDirection;
         float rot = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
-        Instantiate(Weapon, pos + dir, Quaternion.Euler(0, 0, rot + 90), transform);
+        Instantiate(weaponProjectile, pos + dir, Quaternion.Euler(0, 0, rot + 90), transform);
     }
 
     protected override IEnumerator Initialize()

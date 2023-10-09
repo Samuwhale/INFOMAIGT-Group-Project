@@ -1,17 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : CharacterBase
 {
     // SEE BASE CLASS! Lot of things are implemented there (so that the enemies can also inherit from it)
 
-    private Weapon scythe;
-    private Weapon forcefield;
-    private Weapon throwingDagger;
-
-    private Item shield, cheese, boots;
+    private List<Weapon> weapons;
+    private List<Item> items;
 
     public gameoverscreen gameoverscreen;
 
@@ -20,110 +18,63 @@ public class Player : CharacterBase
     protected override void Awake()
     {
         base.Awake();
-        scythe = GetComponent<Scythe>();
-        forcefield = GetComponent<Forcefield>();   
-        throwingDagger = GetComponent<ThrowingDagger>();
-
-        shield = GetComponent<Shield>();
-        cheese = GetComponent<Cheese>();
-        boots = GetComponent<Boots>();
+        weapons = new List<Weapon>
+        {
+            GetComponent<Scythe>(),
+            GetComponent<Forcefield>(),
+            GetComponent<ThrowingDagger>()
+        };
+        items = new List<Item>
+        {
+            GetComponent<Shield>(),
+            GetComponent<Cheese>(),
+            GetComponent<Boots>()
+        };
     }
 
     private void Start()
     {
-        scythe.Activate();
-        forcefield.Activate();
-        throwingDagger.Activate();
-
-        shield.Activate();
-        cheese.Activate(); 
-        boots.Activate();
+        foreach (var weapon in weapons)
+        {
+            weapon.Activate();
+        }
+        foreach (var item in items)
+        {
+            item.Activate();
+        }
+        weapons[0].LevelUp(); // Start with one weapon
 
         isAlive = true;
     }
 
     public void LevelUpWeapon(int weaponID)
     {
-        switch (weaponID)
-        {
-            case 0:
-                scythe.LevelUp();
-                break;
-            case 1:
-                forcefield.LevelUp();
-                break;
-            case 2:
-                throwingDagger.LevelUp();
-                break;
-        }
+        weapons[weaponID].LevelUp();
     }
 
     public void LevelUpItem(int itemID)
     {
-        switch (itemID)
-        {
-            case 0:
-                shield.LevelUp();
-                break;
-            case 1:
-                cheese.LevelUp();
-                break;
-            case 2:
-                boots.LevelUp();
-                break;
-        }
+        items[itemID].LevelUp();
     }
 
     public int GetWeaponLevel(int weaponID)
     {
-        switch (weaponID)
-        {
-            default:
-                return scythe.level;
-            case 1:
-                return forcefield.level;
-            case 2:
-                return throwingDagger.level;
-        }
+        return weapons[weaponID].level;
     }
 
     public int GetItemLevel(int itemID)
     {
-        switch (itemID)
-        {
-            default:
-                return shield.level;
-            case 1:
-                return cheese.level;
-            case 2:
-                return boots.level;
-        }
+        return items[itemID].level;
     }
 
     public WeaponData GetWeaponData(int weaponID)
     {
-        switch (weaponID)
-        {
-            default:
-                return scythe.weaponData;
-            case 1:
-                return forcefield.weaponData;
-            case 2:
-                return throwingDagger.weaponData;
-        }
+        return weapons[weaponID].weaponData;
     }
 
     public ItemData GetItemData(int itemID)
     {
-        switch (itemID)
-        {
-            default:
-                return shield.itemData;
-            case 1:
-                return cheese.itemData;
-            case 2:
-                return boots.itemData;
-        }
+        return items[itemID].itemData;
     }
 
     public override void Die()

@@ -19,7 +19,7 @@ public abstract class Item : MonoBehaviour
         itemOwner = GetComponent<CharacterBase>();
     }
 
-    public virtual void LevelUp() { }
+    public virtual void LevelUp() { level++; }
 
     public void Activate()
     {
