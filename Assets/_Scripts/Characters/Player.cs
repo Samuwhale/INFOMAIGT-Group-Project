@@ -47,6 +47,22 @@ public class Player : CharacterBase
         isAlive = true;
     }
 
+    public override void IncreaseAttackPower(int amount)
+    {
+        _attackPower += amount;
+        
+        float multiplier = _attackPower / _initialAttackPower;
+        foreach (Weapon weapon in weapons)
+        {
+            weapon.IncreaseAttackMultiplier(multiplier);
+        }
+    }
+
+    public List<Weapon> GetWeaponList()
+    {
+        return weapons;
+    }
+
     public void LevelUpWeapon(int weaponID)
     {
         weapons[weaponID].LevelUp();

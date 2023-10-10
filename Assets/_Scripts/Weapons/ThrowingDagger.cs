@@ -9,6 +9,8 @@ public class ThrowingDagger : Weapon
         switch (level)
         {
             case 0:
+                weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackPower(baseAttackPower);
+                weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackMultiplier(1f);
                 StartCoroutine(Initialize());
                 break;
             case 1:

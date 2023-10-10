@@ -51,7 +51,7 @@ public class CharacterBase : MonoBehaviour
         _maxHealth += amount;
     }
     
-    public void IncreaseAttackPower(int amount)
+    public virtual void IncreaseAttackPower(int amount)
     {
         _attackPower += amount;
     }

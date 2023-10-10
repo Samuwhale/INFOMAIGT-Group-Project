@@ -38,9 +38,13 @@ public abstract class Weapon : MonoBehaviour
         // the weapon base attack speed is in seconds. So a weapon attack speed of 5 = 5 seconds in between attacks.
         weaponAttackDelay = Mathf.Clamp(baseAttackDelay * 100/weaponOwner.GetAttackSpeed(), 0.1f, 100f);
     }
-    
-    public virtual void Attack() { }
-    public virtual void LevelUp() { }
+
+    public virtual void IncreaseAttackMultiplier(float multiplier)
+    {
+        weaponProjectile.GetComponent<Projectile>().SetAttackMultiplier(multiplier);
+    }
+
+    public abstract void LevelUp();
 
     public void Activate()
     {

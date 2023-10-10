@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponProjectile: {fileID: 5519089696584957711, guid: dd0d9532f2a154e12858e6d31ff60bed, type: 3}
-  baseAttackPower: 5
+  baseAttackPower: 10
   baseAttackDelay: 2
   level: 0
   weaponData: {fileID: 11400000, guid: 80c87f7a858eebf4fae89b67d8379e19, type: 2}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponProjectile: {fileID: 7631301855099727841, guid: 864e2d4b6920c4b45a9a43cbfe5f8453, type: 3}
-  baseAttackPower: 5
+  baseAttackPower: 10
   baseAttackDelay: 1.2
   level: 0
   weaponData: {fileID: 11400000, guid: cc4db135e1e19d44385ab90ef113c1cf, type: 2}
@@ -550,10 +550,10 @@ MonoBehaviour:
   _movementSpeed: 0
   hp_bar: {fileID: 1796296597}
   _initialHealth: 100
-  _initialAttackPower: 10
+  _initialAttackPower: 100
   _initialAttackSpeed: 100
   _initialDefencePower: 100
-  _initialMovementSpeed: 2000
+  _initialMovementSpeed: 1000
   gameoverscreen: {fileID: 645376144}
   isAlive: 0
 --- !u!114 &42304449

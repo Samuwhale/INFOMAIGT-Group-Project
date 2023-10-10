@@ -6,31 +6,27 @@ public class Cheese : Item
 {
     public override void LevelUp()
     {
-        int currAttack, targetAttack;
         switch (level)
         {
             case 0:
                 itemOwner.IncreaseAttackPower(10);
+                itemOwner.IncreaseMaxHealth(10);
                 break;
             case 1:
-                currAttack = itemOwner.GetAttackPower();
-                targetAttack = Mathf.RoundToInt(currAttack * 1.1f);
-                itemOwner.IncreaseMaxHealth(targetAttack - currAttack);
+                itemOwner.IncreaseAttackPower(10);
+                itemOwner.IncreaseMaxHealth(10);
                 break;
             case 2:
-                currAttack = itemOwner.GetAttackPower();
-                targetAttack = Mathf.RoundToInt(currAttack * 1.1f);
-                itemOwner.IncreaseMaxHealth(targetAttack - currAttack);
+                itemOwner.IncreaseAttackPower(10);
+                itemOwner.IncreaseMaxHealth(10);
                 break;
             case 3:
-                currAttack = itemOwner.GetAttackPower();
-                targetAttack = Mathf.RoundToInt(currAttack * 1.2f);
-                itemOwner.IncreaseMaxHealth(targetAttack - currAttack);
+                itemOwner.IncreaseAttackPower(20);
+                itemOwner.IncreaseMaxHealth(20);
                 break;
             case 4:
-                currAttack = itemOwner.GetAttackPower();
-                targetAttack = Mathf.RoundToInt(currAttack * 1.2f);
-                itemOwner.IncreaseMaxHealth(targetAttack - currAttack);
+                itemOwner.IncreaseAttackPower(20);
+                itemOwner.IncreaseMaxHealth(20);
                 break;
             default:
                 break;

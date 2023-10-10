@@ -10,7 +10,9 @@ public class Scythe : Weapon
         {
             case 0:
                 weaponProjectile.transform.localScale = new Vector3(5, 5, 1);
-                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(10);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(baseAttackPower);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackMultiplier(1f);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0f);
                 StartCoroutine(Initialize());
                 break;
             case 1:
