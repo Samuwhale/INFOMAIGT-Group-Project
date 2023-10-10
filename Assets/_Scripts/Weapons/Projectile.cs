@@ -11,8 +11,7 @@ public class Projectile : MonoBehaviour
 
     public void SetAttackPower(int power) { _attackPower = power; }
 
-    public void SetAttackMultiplier(float mult) { _attackMultiplier = mult;
-        Debug.Log($"Cheese activated, set attack to {mult}"); }
+    public void SetAttackMultiplier(float mult) { _attackMultiplier = mult; }
 
     //public virtual void SetStats(int[] stats_i, float[] stats_f = null)
     //{

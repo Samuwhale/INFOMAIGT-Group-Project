@@ -24,7 +24,5 @@ public abstract class Item : MonoBehaviour
     public void Activate()
     {
         InitializeItemValues();
-        
-        Debug.Log($"Item {this} activated");
     }
 }
