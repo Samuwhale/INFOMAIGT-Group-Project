@@ -21,16 +21,16 @@ public class Level : MonoBehaviour
     [SerializeField] Image[] image = new Image[slots];
 
     private Player _player;
-    private int WEAPONCOUNT = 3;
-    private int ITEMCOUNT = 3;
     private int WEAPONMAXLEVEL = 7;
     private int ITEMMAXLEVEL = 5;
+    private List<int> possible_ids;
 
     private void Awake()
     {
         level = 0;
         levelUpMenuOpen = false;
         _player = GetComponent<Player>();
+        possible_ids = new List<int> { 0, 1, 2, 100, 101, 102 }; // 0-100 for weapons, 100+ for items
         //GetExp(1); // for testing
     }
 
@@ -72,25 +72,20 @@ public class Level : MonoBehaviour
     private void OpenLevelUpMenu()
     {
         _levelUpMenu.SetActive(true);
-        List<int> duplicates = new List<int>(3);
-        List<int> itemDuplicates = new List<int>(3);
+        List<int> possible_ids_copy = new List<int>(possible_ids);
         int slotsOpen = 3; // optional upgrade for 4 slots
         // TODO: add cases for if less than 3 options are available
 
         for (int i = 0; i < slotsOpen; i++)
         {
-            if (Random.Range(0, 10) <= 4) // 5/10 chance for a weapon, 5/10 for a item
+            int id = possible_ids_copy[Random.Range(0, possible_ids_copy.Count)];
+            if (id < 100) // weapon ids < 100
             {
-                int weaponID = 0;
-                int weaponLevel = 0;
-                while (true)
-                {
-                    weaponID = Random.Range(0, WEAPONCOUNT);
-                    weaponLevel = _player.GetWeaponLevel(weaponID);
-                    if (/*weaponLevel != WEAPONMAXLEVEL && */!duplicates.Contains(weaponID))
-                        break;
-                }
-                duplicates.Add(weaponID);
+                int weaponID = id;
+                int weaponLevel = _player.GetWeaponLevel(weaponID);
+                if (weaponLevel + 1 == WEAPONMAXLEVEL)
+                    possible_ids.Remove(id);
+                possible_ids_copy.Remove(id);
 
                 WeaponData weaponData = _player.GetWeaponData(weaponID);
                 image[i].sprite = weaponData.icon;
@@ -106,17 +101,12 @@ public class Level : MonoBehaviour
                     });
                 continue;
             }
-            // else branch
-            int itemID = 0;
+            // else branch (id > 100)
+            int itemID = id - 100;
             int itemLevel = 0;
-            while (true)
-            {
-                itemID = Random.Range(0, ITEMCOUNT);
-                itemLevel = _player.GetItemLevel(itemID);
-                if (/*itemLevel != ITEMMAXLEVEL*/!itemDuplicates.Contains(itemID))
-                    break;
-            }
-            itemDuplicates.Add(itemID);
+            if (itemLevel + 1 == ITEMMAXLEVEL)
+                possible_ids.Remove(id);
+            possible_ids_copy.Remove(id);
 
             ItemData itemData = _player.GetItemData(itemID);
             image[i].sprite = itemData.icon;
