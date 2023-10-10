@@ -99,6 +99,7 @@ public class Level : MonoBehaviour
                 if (weaponLevel == 0) levelText[i].text = "New";
                 description[i].text = weaponData.description[weaponLevel];
 
+                button[i].onClick.RemoveAllListeners();
                 button[i].onClick.AddListener(delegate {
                     _player.LevelUpWeapon(weaponID);
                     levelUpMenuOpen = false;
@@ -124,6 +125,7 @@ public class Level : MonoBehaviour
             if (itemLevel == 0) levelText[i].text = "New";
             description[i].text = itemData.description[itemLevel];
 
+            button[i].onClick.RemoveAllListeners();
             button[i].onClick.AddListener(delegate {
                     _player.LevelUpItem(itemID);
                     levelUpMenuOpen = false;
