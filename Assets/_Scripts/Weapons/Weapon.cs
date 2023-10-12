@@ -13,7 +13,7 @@ public abstract class Weapon : MonoBehaviour
     protected int weaponAttackPower;
     protected float weaponAttackDelay;
 
-    CharacterBase weaponOwner;
+    protected CharacterBase weaponOwner;
     
     public int GetWeaponAttackPower() => weaponAttackPower;
     public float GetWeaponAttackSpeed() => weaponAttackDelay;

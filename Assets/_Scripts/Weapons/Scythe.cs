@@ -11,12 +11,12 @@ public class Scythe : Weapon
             case 0:
                 weaponProjectile.transform.localScale = new Vector3(5, 5, 1);
                 weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(baseAttackPower);
-                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackMultiplier(1f);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackMultiplier(weaponOwner.GetAttackMultiplier());
                 weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0f);
                 StartCoroutine(Initialize());
                 break;
             case 1:
-                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(15);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(baseAttackPower + 5);
                 break;
             case 2:
                 // increase weapon size
@@ -26,7 +26,7 @@ public class Scythe : Weapon
                 weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.02f);
                 break;
             case 4:
-                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(25);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(baseAttackPower + 15);
                 break;
             case 5:
                 // increase weapon size

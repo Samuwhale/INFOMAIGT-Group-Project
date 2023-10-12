@@ -56,6 +56,11 @@ public class CharacterBase : MonoBehaviour
         _attackPower += amount;
     }
     
+    public virtual float GetAttackMultiplier()
+    {
+        return _attackPower / _initialAttackPower;
+    }
+    
     public void IncreaseAttackSpeed(int amount)
     {
         _attackSpeed += amount;

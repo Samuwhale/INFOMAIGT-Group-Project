@@ -11,7 +11,7 @@ public class Forcefield : Weapon
         {
             case 0:
                 weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackPower(baseAttackPower);
-                weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackMultiplier(1f);
+                weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackMultiplier(weaponOwner.GetAttackMultiplier());
                 StartCoroutine(Initialize());
                 break;
             case 1:
