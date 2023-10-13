@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject ExpOrbDrop;
+    public GameObject HeartDrop;
+    public GameObject[] ItemDropList;
+
     [System.Serializable] public class Wave
     {
         public int spawnTime;

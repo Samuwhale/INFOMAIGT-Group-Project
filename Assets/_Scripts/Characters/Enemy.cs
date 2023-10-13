@@ -86,6 +86,10 @@ public class Enemy : CharacterBase
 
     public override void Die()
     {
+        ItemDropper dropper = GetComponent<ItemDropper>();
+        dropper.DropItem(gameObject.transform.position);
+
+
         Destroy(this.gameObject);
     }
 }

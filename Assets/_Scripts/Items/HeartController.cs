@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class HeartController : MonoBehaviour
 {
+    public int HealthPerHeart = 20;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player>().TakeDamage(-20);
+            other.gameObject.GetComponent<Player>().TakeDamage(-HealthPerHeart);
             Destroy(gameObject);
         }
     }

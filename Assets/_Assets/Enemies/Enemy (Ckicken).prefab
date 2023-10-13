@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 9115886685315909013}
   - component: {fileID: 5521554028657212918}
   - component: {fileID: 1821115161852396359}
+  - component: {fileID: 390886750485670268}
   m_Layer: 0
   m_Name: Enemy (Ckicken)
   m_TagString: enemy
@@ -206,6 +207,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &390886750485670268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014709901876189688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b432fb619b88c46a6520859e9a90c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpOrbDrop: {fileID: 8152886012426307255, guid: e258903cf6eab1c458e85f6112f8c60f, type: 3}
+  HeartDrop: {fileID: 5418905321204481886, guid: 7b986b37b400e0049808b18b784db646, type: 3}
+  ItemDropList:
+  - {fileID: 0}
 --- !u!1001 &7270821218483936319
 PrefabInstance:
   m_ObjectHideFlags: 0

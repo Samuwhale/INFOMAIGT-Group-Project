@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1953754682746309098}
   - component: {fileID: 8709252656464643321}
   - component: {fileID: 5571132950832571775}
+  - component: {fileID: 7727027020559117145}
   m_Layer: 0
   m_Name: Enemy (Cow)
   m_TagString: enemy
@@ -120,6 +121,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7727027020559117145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416810241321179046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b432fb619b88c46a6520859e9a90c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpOrbDrop: {fileID: 8152886012426307255, guid: e258903cf6eab1c458e85f6112f8c60f, type: 3}
+  HeartDrop: {fileID: 5418905321204481886, guid: 7b986b37b400e0049808b18b784db646, type: 3}
+  ItemDropList:
+  - {fileID: 0}
 --- !u!1 &4741771794086340766
 GameObject:
   m_ObjectHideFlags: 0
