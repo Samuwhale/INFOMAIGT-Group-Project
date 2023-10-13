@@ -553,7 +553,7 @@ MonoBehaviour:
   _initialAttackPower: 100
   _initialAttackSpeed: 100
   _initialDefencePower: 100
-  _initialMovementSpeed: 1000
+  _initialMovementSpeed: 200
   gameoverscreen: {fileID: 645376144}
   isAlive: 0
 --- !u!114 &42304449
@@ -1389,6 +1389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0827908633ede094c86e459449b7a138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExpOrbDrop: {fileID: 0}
+  HeartDrop: {fileID: 0}
+  ItemDropList: []
   waveList:
   - spawnTime: 10
     waveSize: 5

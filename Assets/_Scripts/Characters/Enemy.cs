@@ -46,7 +46,7 @@ public class Enemy : CharacterBase
     {
         if (!_inKnockBack)
         {
-            _rigidbody2D.velocity = new Vector2(moveX * GetMovementSpeed() * Time.deltaTime, moveY * GetMovementSpeed() * Time.deltaTime);
+            _rigidbody2D.velocity = new Vector2(moveX * GetMovementSpeed() * Time.fixedDeltaTime, moveY * GetMovementSpeed() * Time.deltaTime);
         }
     }
 
