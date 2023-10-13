@@ -16,8 +16,8 @@ MonoBehaviour:
   itemId: 2
   icon: {fileID: 21300000, guid: 62c325700d95ee8478fc54176b489e32, type: 3}
   description:
-  - Leather boots, increases movement speed.
-  - movement speed +1
-  - movement speed +1
-  - movement speed +1
-  - movement speed +1
+  - Leather boots, increases movement speed by 10%.
+  - movement speed +10%
+  - movement speed +10%
+  - movement speed +10%
+  - movement speed +10%
