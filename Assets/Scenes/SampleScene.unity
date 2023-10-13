@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponProjectile: {fileID: 5469194157352834997, guid: 832f39f1763bc49ad83ca319baade501, type: 3}
-  baseAttackPower: 5
+  baseAttackPower: 20
   baseAttackDelay: 5
   level: 0
   weaponData: {fileID: 11400000, guid: b7cd05761efa17543bdd93f742245272, type: 2}
