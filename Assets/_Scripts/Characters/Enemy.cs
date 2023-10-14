@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : CharacterBase
 {
     // SEE BASE CLASS! Lot of things are implemented there.
-    protected Transform _playerPos;
+    protected GameObject _player;
     protected float _knockBackForce;
     protected float _knockBackTime;
     protected bool _inKnockBack = false;
@@ -29,12 +29,13 @@ public class Enemy : CharacterBase
 
     void Start()
     {
-        _playerPos = GameObject.Find("Player").transform;
+        _player = GameObject.Find("/Player");
+        _player.GetComponent<Player>().AddEnemyPos(transform);
     }
 
     protected Vector2 GetPlayerVector()
     {
-        return _playerPos.position - this.transform.position;
+        return _player.transform.position - this.transform.position;
     }
 
     protected Vector2 GetPlayerDirection()
@@ -86,6 +87,7 @@ public class Enemy : CharacterBase
 
     public override void Die()
     {
+        _player.GetComponent<Player>().RemoveEnemyPos(transform);
         GetComponent<ItemDropper>().DropItem(gameObject.transform.position);
         Destroy(this.gameObject);
     }

@@ -50,7 +50,7 @@ public class Scythe : Weapon
         float rot = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
         if (dir.y > 0)
             dir.z = 1;
-        GameObject projectile = Instantiate(weaponProjectile, pos + dir * spawnDistance, Quaternion.Euler(0, 0, rot + 90), transform);
+        Instantiate(weaponProjectile, pos + dir * spawnDistance, Quaternion.Euler(0, 0, rot + 90), transform);
     }
 
     protected override IEnumerator Initialize()

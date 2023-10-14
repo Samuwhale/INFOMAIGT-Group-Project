@@ -30,7 +30,7 @@ public class Level : MonoBehaviour
         level = 0;
         levelUpMenuOpen = false;
         _player = GetComponent<Player>();
-        possible_ids = new List<int> { 0, 1, 2, 100, 101, 102 }; // 0-100 for weapons, 100+ for items
+        possible_ids = new List<int> { 0, 1, 2, 3, 100, 101, 102 }; // 0-100 for weapons, 100+ for items
         //GetExp(1); // for testing
     }
 

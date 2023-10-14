@@ -12,6 +12,7 @@ public class Player : CharacterBase
     private List<Item> items;
 
     public gameoverscreen gameoverscreen;
+    public List<Transform> enemyList; // Somehow it breaks if it is not public
 
     public bool isAlive;
 
@@ -22,7 +23,8 @@ public class Player : CharacterBase
         {
             GetComponent<Scythe>(),
             GetComponent<Forcefield>(),
-            GetComponent<ThrowingDagger>()
+            GetComponent<ThrowingDagger>(),
+            GetComponent<IceStaff>()
         };
         items = new List<Item>
         {
@@ -91,6 +93,20 @@ public class Player : CharacterBase
     public ItemData GetItemData(int itemID)
     {
         return items[itemID].itemData;
+    }
+
+    public void AddEnemyPos(Transform transform) => enemyList.Add(transform);
+
+    public void RemoveEnemyPos(Transform transform) => enemyList.Remove(transform);
+
+    public Transform[] GetNearestEnemyPosition(int amount)
+    {
+        if (amount > enemyList.Count)
+            return enemyList.ToArray();
+
+        return enemyList.OrderBy(t => (t.position - transform.position).sqrMagnitude)
+                        .Take(amount)
+                        .ToArray();
     }
 
     public override void Die()
