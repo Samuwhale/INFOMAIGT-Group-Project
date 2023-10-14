@@ -21,7 +21,7 @@ public class ThrowingDagger : Weapon
                 weaponProjectile.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                 break;
             case 3:
-                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackPower(baseAttackPower + 5);
+                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackPower(baseAttackPower + baseAttackPower);
                 break;
             case 4:
                 weaponAttackDelay -= 0.5f;
@@ -30,10 +30,9 @@ public class ThrowingDagger : Weapon
                 weaponProjectile.transform.localScale = new Vector3(2, 2, 1);
                 break;
             case 6:
-                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackPower(baseAttackPower + baseAttackPower);
-                break;
-            case 7:
                 weaponAttackDelay -= 0.5f;
+                break;
+            default: 
                 break;
         }
         level++;

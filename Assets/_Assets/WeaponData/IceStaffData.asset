@@ -17,9 +17,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 40272f65efac1f34b9fedc577d7b0a6c, type: 3}
   description:
   - Magical staff that shoots icicles.
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Decrease attack delay.
+  - Increase damage.
+  - Shoot an extra icicle.
+  - Decrease attack delay
+  - Increase damage.
+  - Shoot another extra icicle.

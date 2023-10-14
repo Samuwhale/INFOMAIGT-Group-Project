@@ -24,7 +24,7 @@ public class Scythe : Weapon
                 weaponProjectile.transform.localScale = new Vector3(6, 6, 1);
                 break;
             case 3:
-                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.02f);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.05f);
                 break;
             case 4:
                 weaponProjectile.GetComponent<ScytheProjectile>().SetAttackPower(baseAttackPower + 15);
@@ -34,7 +34,7 @@ public class Scythe : Weapon
                 weaponProjectile.transform.localScale = new Vector3(8, 8, 1);
                 break;
             case 6:
-                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.05f);
+                weaponProjectile.GetComponent<ScytheProjectile>().SetInstaKillChance(0.1f);
                 break;
             default:
                 break;

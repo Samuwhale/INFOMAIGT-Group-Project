@@ -5,7 +5,7 @@ using UnityEngine;
 public class IceStaff : Weapon
 {
     [SerializeField] private float spawnDistance = 0.5f;
-    [SerializeField] private float projectileSpeed = 8f;
+    [SerializeField] private float projectileSpeed = 5f;
     [SerializeField] private int projectileCount = 1;
     private Player playerScript;
 
@@ -20,16 +20,22 @@ public class IceStaff : Weapon
                 StartCoroutine(Initialize());
                 break;
             case 1:
+                weaponAttackDelay -= 0.75f;
                 break;
             case 2:
+                weaponProjectile.GetComponent<IcicleProjectile>().SetAttackPower(baseAttackPower + 5);
                 break;
             case 3:
+                projectileCount += 1;
                 break;
             case 4:
+                weaponAttackDelay -= 0.75f;
                 break;
             case 5:
+                weaponProjectile.GetComponent<IcicleProjectile>().SetAttackPower(baseAttackPower + 10);
                 break;
             case 6:
+                projectileCount += 1;
                 break;
             default:
                 break;

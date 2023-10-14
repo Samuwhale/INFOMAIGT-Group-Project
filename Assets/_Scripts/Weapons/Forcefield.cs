@@ -38,6 +38,8 @@ public class Forcefield : Weapon
             case 6:
                 weaponProjectile.GetComponent<ForcefieldProjectile>().SetAttackPower(baseAttackPower + 20);
                 break;
+            default: 
+                break;
         }
         level++;
     }
