@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scythe : Weapon
 {
+    [SerializeField] private float spawnDistance = 0.5f;
     public override void LevelUp() 
     {
         switch (level)
@@ -43,11 +44,13 @@ public class Scythe : Weapon
 
     private void SpawnWeapon()
     {
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = gameObject.transform.position + new Vector3(0, 0.3f, 0);
         // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 dir = (Vector3)GetComponent<PlayerMovement>().LastPlayerDirection;
+        Vector3 dir = (Vector3)GetComponent<PlayerMovement>().LastPlayerDirection.normalized;
         float rot = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
-        Instantiate(weaponProjectile, pos + dir, Quaternion.Euler(0, 0, rot + 90), transform);
+        if (dir.y > 0)
+            dir.z = 1;
+        GameObject projectile = Instantiate(weaponProjectile, pos + dir * spawnDistance, Quaternion.Euler(0, 0, rot + 90), transform);
     }
 
     protected override IEnumerator Initialize()
