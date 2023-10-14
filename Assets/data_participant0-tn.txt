@@ -1,0 +1,11 @@
+Question 1 answer: Too Hard
+Question 2 answer: Bored
+EnemiesKilled: 0
+DamageTaken: 0
+DamageTakenPerSecond: 0
+DamageDealt: 0
+DamageDealtPerSecond: 0
+Accuracy: 0
+TimeSpentOnWave: 0
+WavesCleared: 0
+
