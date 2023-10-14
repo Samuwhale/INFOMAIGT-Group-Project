@@ -10,9 +10,9 @@ public class Cow : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(_playerPos)
+        if(_player)
         {
             Vector2 dir = GetPlayerDirection();
 

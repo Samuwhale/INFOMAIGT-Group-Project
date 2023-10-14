@@ -16,10 +16,10 @@ MonoBehaviour:
   weaponId: 2
   icon: {fileID: 21300000, guid: 66d4aabd7eba8be44b5eef4eb8960a87, type: 3}
   description:
-  - Throws a dagger
-  - moar daggors
-  - moar daggors
-  - moar daggors
-  - moar daggors
-  - moar daggors
-  - moar daggors
+  - Throws a dagger in the air.
+  - Increases attack speed.
+  - Bigger daggers.
+  - Doubled the damage.
+  - Further increases attack speed.
+  - Even bigger daggers. Can you even call these daggers anymore at this point?
+  - Nimble throwing hands.

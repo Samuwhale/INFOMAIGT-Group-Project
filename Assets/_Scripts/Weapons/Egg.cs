@@ -22,9 +22,9 @@ public class Egg : MonoBehaviour
         this.dir = shootDir;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        _rigidbody2D.velocity = dir * speed * Time.deltaTime;
+        _rigidbody2D.velocity = dir * speed * Time.fixedDeltaTime;
     }
 
     IEnumerator DestroyTimer()

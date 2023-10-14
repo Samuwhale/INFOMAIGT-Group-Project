@@ -8,6 +8,7 @@ public class gameoverscreen : MonoBehaviour
 { 
     public void Setup()
     {
+        Time.timeScale = 0.0f;
         gameObject.SetActive(true);
     }
 

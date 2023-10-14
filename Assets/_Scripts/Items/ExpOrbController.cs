@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ExpOrbController : MonoBehaviour
 {
+    public int ExpPerOrb = 10;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Level>().GetExp(10);
+            other.gameObject.GetComponent<Level>().GetExp(ExpPerOrb);
             Destroy(gameObject);
         }
     }

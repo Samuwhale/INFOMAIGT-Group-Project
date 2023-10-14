@@ -17,9 +17,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3e2e97afd666e194f8cc3e76cacb9818, type: 3}
   description:
   - Attacks closeby enemies with a scythe.
-  - Damage +5
+  - Small increase in damage.
   - Size +20%
-  - Gain a 2% chance to instakill
-  - Damage + 10
+  - Gain a 5% chance to instakill.
+  - Big increase in damage
   - Size + 30%
-  - +3% chance to instakill
+  - +5% chance to instakill.

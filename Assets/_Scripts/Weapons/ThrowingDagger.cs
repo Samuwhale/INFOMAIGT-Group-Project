@@ -9,23 +9,30 @@ public class ThrowingDagger : Weapon
         switch (level)
         {
             case 0:
+                weaponProjectile.transform.localScale = new Vector3(1, 1, 1);
                 weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackPower(baseAttackPower);
-                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackMultiplier(1f);
+                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackMultiplier(weaponOwner.GetAttackMultiplier());
                 StartCoroutine(Initialize());
                 break;
             case 1:
+                weaponAttackDelay -= 0.5f;
                 break;
             case 2:
+                weaponProjectile.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                 break;
             case 3:
+                weaponProjectile.GetComponent<ThrowingDaggerProjectile>().SetAttackPower(baseAttackPower + baseAttackPower);
                 break;
             case 4:
+                weaponAttackDelay -= 0.5f;
                 break;
             case 5:
+                weaponProjectile.transform.localScale = new Vector3(2, 2, 1);
                 break;
             case 6:
+                weaponAttackDelay -= 0.5f;
                 break;
-            case 7:
+            default: 
                 break;
         }
         level++;

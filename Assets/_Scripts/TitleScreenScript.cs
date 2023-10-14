@@ -8,6 +8,7 @@ public class TitleScreenScript : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(1);
     }
 

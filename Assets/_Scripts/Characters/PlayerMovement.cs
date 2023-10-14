@@ -47,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveCharacter(float moveX, float moveY)
     {
-        _rigidbody2D.velocity = new Vector2(moveX * _player.GetMovementSpeed() * Time.deltaTime, moveY * _player.GetMovementSpeed() * Time.deltaTime);
+        _rigidbody2D.velocity = new Vector2(moveX * _player.GetMovementSpeed() * Time.fixedDeltaTime, moveY * _player.GetMovementSpeed() * Time.deltaTime);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_level.levelUpMenuOpen)
         {

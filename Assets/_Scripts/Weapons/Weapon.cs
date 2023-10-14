@@ -13,7 +13,7 @@ public abstract class Weapon : MonoBehaviour
     protected int weaponAttackPower;
     protected float weaponAttackDelay;
 
-    CharacterBase weaponOwner;
+    protected CharacterBase weaponOwner;
     
     public int GetWeaponAttackPower() => weaponAttackPower;
     public float GetWeaponAttackSpeed() => weaponAttackDelay;
@@ -31,7 +31,7 @@ public abstract class Weapon : MonoBehaviour
         weaponOwner = GetComponent<CharacterBase>();
         
         // the higher the attack power of the owner, the higher the weapon power.
-        weaponAttackPower = weaponOwner.GetAttackPower() + baseAttackPower;
+        weaponAttackPower = baseAttackPower;
         
         // the higher the attack speed (base of 100) of the owner, the lower the delay.
         // (200 attack speed in owner = 50% of original delay)

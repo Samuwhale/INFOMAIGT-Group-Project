@@ -16,10 +16,10 @@ MonoBehaviour:
   weaponId: 1
   icon: {fileID: 1160709651, guid: d6b9b2e593a494236b8a4dbd80a53b25, type: 3}
   description:
-  - Does things.
-  - Whatever it does, now it does it better
-  - Whatever it does, now it does it better
-  - Whatever it does, now it does it better
-  - Whatever it does, now it does it better
-  - Whatever it does, now it does it better
-  - Whatever it does, now it does it better
+  - A forcefield that explodes on enemy contact.
+  - Increase explosion size.
+  - Reduce recharge time by 2 seconds.
+  - Increases explosion damage.
+  - Increase explosion size even more.
+  - Reduce recharge time by another 3 seconds.
+  - Increase the damage by a lot.
