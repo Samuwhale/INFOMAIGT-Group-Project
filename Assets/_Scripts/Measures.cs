@@ -47,6 +47,10 @@ public class Measures : MonoBehaviour
         AddMeasure(nameof(TimeSpentOnWave), TimeSpentOnWave.ToString());
         AddMeasure(nameof(WavesCleared), WavesCleared.ToString());
         fileString += "\n";
+        EnemiesKilled = 0;
+        DamageTaken = 0;
+        DamageDealt = 0;
+        TimeSpentOnWave = 0;
     }
 
     public void StartSurvey1()

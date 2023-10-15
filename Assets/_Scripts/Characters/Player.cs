@@ -110,6 +110,12 @@ public class Player : CharacterBase
                         .ToArray();
     }
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        measures.DamageTaken += damage;
+    }
+
     public override void Die()
     {
         isAlive = false;
