@@ -12,6 +12,7 @@ public class Player : CharacterBase
     private List<Item> items;
 
     public gameoverscreen gameoverscreen;
+    public Measures measures;
     public List<Transform> enemyList; // Somehow it breaks if it is not public
 
     public bool isAlive;
@@ -113,6 +114,7 @@ public class Player : CharacterBase
     {
         isAlive = false;
         gameoverscreen.Setup();
+        measures.WriteFile();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
