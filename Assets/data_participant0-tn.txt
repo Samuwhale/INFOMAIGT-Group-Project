@@ -1,5 +1,5 @@
-Question 1 answer: Too Hard
-Question 2 answer: Bored
+Question 1 answer: Too Easy
+Question 2 answer: Frustrated
 EnemiesKilled: 0
 DamageTaken: 0
 DamageTakenPerSecond: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Measures : MonoBehaviour
 {
-    private string path = Application.dataPath;
+    private string path = Application.dataPath + "/data";
 
     public int EnemiesKilled;
     public float DamageTaken;
