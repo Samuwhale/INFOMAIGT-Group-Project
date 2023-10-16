@@ -1395,7 +1395,7 @@ Transform:
   m_GameObject: {fileID: 236177221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.65197, y: 0.5905545, z: -0.27916062}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1413,13 +1413,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0827908633ede094c86e459449b7a138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpOrbDrop: {fileID: 0}
-  HeartDrop: {fileID: 0}
+  ExpOrbDrop: {fileID: 8152886012426307255, guid: e258903cf6eab1c458e85f6112f8c60f, type: 3}
+  HeartDrop: {fileID: 5418905321204481886, guid: 7b986b37b400e0049808b18b784db646, type: 3}
   ItemDropList: []
+  tracker: {fileID: 0}
+  Chicken: {fileID: 3014709901876189688, guid: 0dfd38828327f06449068d50ecc750c2, type: 3}
+  Cow: {fileID: 416810241321179046, guid: 21a822ace24197245b4428e4a299b8dc, type: 3}
+  NumEnemies: 0
   waveList:
-  - spawnTime: 2
+  - waveID: 0
     waveSize: 5
-    enemy: {fileID: 3014709901876189688, guid: 0dfd38828327f06449068d50ecc750c2, type: 3}
+    spawnBuffer: 10
+    initialTime: 0
 --- !u!1 &248121985
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,12 +7,18 @@ public class EnemySpawner : MonoBehaviour
     public GameObject ExpOrbDrop;
     public GameObject HeartDrop;
     public GameObject[] ItemDropList;
+    public GameObject tracker;
+    public GameObject Chicken;
+    public GameObject Cow;
+    public int NumEnemies = 0;
 
     [System.Serializable] public class Wave
     {
-        public int spawnTime;
+        public int waveID;
+        public int initialTime;
+        public int spawnBuffer;
         public int waveSize;
-        public GameObject enemy;
+        public float spawnChance;
     }
 
 
@@ -21,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tracker = GameObject.Find("MeasureTracker");
         SetupWaves();
     }
 
@@ -28,27 +35,60 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < waveList.Count; i++)
         {
-            StartCoroutine(spawnEnemy(waveList[i].spawnTime, waveList[i].waveSize, waveList[i].enemy));
+            StartCoroutine(StartWave(waveList[i]));
         }
     }
 
-    private IEnumerator spawnEnemy(float spawnTime, int waveSize, GameObject enemy)
+    private IEnumerator StartWave(Wave wave)
     {
-        yield return new WaitForSeconds(spawnTime);
+        yield return new WaitForSeconds(wave.initialTime);
 
-        for (int i = 0; i < waveSize; i++)
+        // Do survey
+        if (wave.waveID != 0) tracker.GetComponent<Measures>().StartSurvey1();
+
+        Debug.Log("Starting wave " + wave.waveID);
+
+        float timer = 0;
+
+        while (timer < 60)
         {
-            GameObject newEnemy;
-
-            float chance = Random.value;
-            if (chance < 0.25f)
-                newEnemy = Instantiate(enemy, new Vector3(Random.Range(-38f, 36f), 19f, 0), Quaternion.identity);
-            else if (chance < 0.5f)
-                newEnemy = Instantiate(enemy, new Vector3(Random.Range(-38f, 36f), -21f, 0), Quaternion.identity);
-            else if (chance < 0.75f)
-                newEnemy = Instantiate(enemy, new Vector3(-38f, Random.Range(-21f, 19f), 0), Quaternion.identity);
-            else
-                newEnemy = Instantiate(enemy, new Vector3(36f, Random.Range(-21f, 19f), 0), Quaternion.identity);
+            while (NumEnemies < wave.waveSize) SpawnRandomEnemy(wave.spawnChance);
+            timer += wave.spawnBuffer;
+            yield return new WaitForSeconds(wave.spawnBuffer);
         }
+    }
+
+    private void SpawnRandomEnemy(float spawnChance)
+    {
+        // Choose a random enemy
+        GameObject newEnemy;
+
+        float enemyChance = Random.value;
+        if (enemyChance < spawnChance) newEnemy = Cow;
+        else newEnemy = Chicken;
+
+        // Choose a random position
+        float posChance = Random.value;
+        float x, y;
+
+        if (posChance < 0.25f) { x = Random.Range(-0.1f, 1.1f); y = -0.1f; }
+        else if (posChance < 0.5f) { x = Random.Range(-0.1f, 1.1f); y = 1.1f; }
+        else if (posChance < 0.75f) { x = -0.1f; y = Random.Range(-0.1f, 1.1f); }
+        else { x = 1.1f; y = Random.Range(-0.1f, 1.1f); }
+
+        Vector3 pos = new Vector3(x, y, 10);
+
+        pos = Camera.main.ViewportToWorldPoint(pos);
+
+        pos.x = Mathf.Clamp(pos.x, -38f, 36f);
+        pos.y = Mathf.Clamp(pos.y, -21f, 19f);
+
+        Debug.Log("Spawning Enemy at " + pos);
+
+        Instantiate(newEnemy, pos, Quaternion.identity);
+
+        NumEnemies += 1;
+
+        return;
     }
 }

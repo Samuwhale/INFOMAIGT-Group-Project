@@ -7,12 +7,13 @@ public class Enemy : CharacterBase
     // SEE BASE CLASS! Lot of things are implemented there.
     protected GameObject _player;
     protected GameObject _measureTracker;
+    protected GameObject _spawner;
     protected float _knockBackForce;
     protected float _knockBackTime;
     protected bool _inKnockBack = false;
     private Rigidbody2D _rigidbody2D;
 
-    [SerializeField] protected float _initialKnockBackForce = 5;
+    [SerializeField] protected float _initialKnockBackForce = 2;
     [SerializeField] protected float _initialKnockBackTime = 0.5f;
 
     protected override void Awake()
@@ -33,7 +34,7 @@ public class Enemy : CharacterBase
         _player = GameObject.Find("/Player");
         _player.GetComponent<Player>().AddEnemyPos(transform);
         _measureTracker = GameObject.Find("/MeasureTracker");
-
+        _spawner = GameObject.Find("/EnemySpawner");
     }
 
     protected Vector2 GetPlayerVector()
@@ -85,6 +86,7 @@ public class Enemy : CharacterBase
         {
             Projectile _projectile = collision.gameObject.GetComponent<Projectile>();
             TakeDamage(_projectile.GetAttackPower());
+            ApplyKnockBack();
         }
     }
 
@@ -93,6 +95,7 @@ public class Enemy : CharacterBase
         _player.GetComponent<Player>().RemoveEnemyPos(transform);
         GetComponent<ItemDropper>().DropItem(gameObject.transform.position);
         _measureTracker.GetComponent<Measures>().EnemiesKilled++;
+        _spawner.GetComponent<EnemySpawner>().NumEnemies -= 1;
         Destroy(this.gameObject);
     }
 }
