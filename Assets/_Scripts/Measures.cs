@@ -9,21 +9,37 @@ public class Measures : MonoBehaviour
 {
     private string path = Application.dataPath + "/data";
 
-    public int EnemiesKilled;
-    public float DamageTaken;
+    public int EnemiesKilled; //check
+    public float DamageTaken; //check
     public float DamageTakenPerSecond;
     public float DamageDealt;
     public float DamageDealtPerSecond;
-    public float Accuracy;
-    public float TimeSpentOnWave;
+    //public float Accuracy;
+    //public float TimeSpentOnWave;
     public int WavesCleared;
+    public int XPGained;
+    public int TotalXPGained;
+    public int IcestaffDam;
+    public int ScytheDam;
+    public int DaggerDam;
+    public int ForcefieldDam;
 
-    public string participantID;
-    public string trialNr;
+    private string Response1; //check
+    private string Response2; //check
+
+    public string participantID = "0";
+    public string trialNr = "0";
     public string fileString;
 
     public Image surveyscreen1;
     public Image surveyscreen2;
+
+    public void Start()
+    {
+        fileString += "WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, " +
+            "IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, " +
+            "maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2";
+    }
 
     public void WriteFile()
     {
@@ -31,26 +47,36 @@ public class Measures : MonoBehaviour
         Debug.Log("Created file at " + path);
     }
 
-    public void AddMeasure(string variablename,string number)
+    public void AddMeasure(string number)
     {
-        fileString += $"{variablename}: {number}\n";
+        fileString += $", {number}";
     }
 
     public void AddMeasures()
     {
-        AddMeasure(nameof(EnemiesKilled), EnemiesKilled.ToString());
-        AddMeasure(nameof(DamageTaken), DamageTaken.ToString());
-        AddMeasure(nameof(DamageTakenPerSecond), DamageTakenPerSecond.ToString());
-        AddMeasure(nameof(DamageDealt), DamageDealt.ToString());
-        AddMeasure(nameof(DamageDealtPerSecond), DamageDealtPerSecond.ToString());
-        AddMeasure(nameof(Accuracy), Accuracy.ToString());
-        AddMeasure(nameof(TimeSpentOnWave), TimeSpentOnWave.ToString());
-        AddMeasure(nameof(WavesCleared), WavesCleared.ToString());
+        CalculateMeasures();
+        fileString += WavesCleared.ToString();
+        AddMeasure(EnemiesKilled.ToString());
+        AddMeasure(DamageTaken.ToString());
+        AddMeasure(DamageTakenPerSecond.ToString());
+        AddMeasure(DamageDealt.ToString());
+        AddMeasure(DamageDealtPerSecond.ToString());
+
+        AddMeasure(Response1);
+        AddMeasure(Response2);
         fileString += "\n";
         EnemiesKilled = 0;
         DamageTaken = 0;
-        DamageDealt = 0;
-        TimeSpentOnWave = 0;
+        IcestaffDam = 0;
+        ScytheDam = 0;
+        DaggerDam = 0;
+        ForcefieldDam = 0;
+        XPGained = 0;
+    }
+
+    public void CalculateMeasures()
+    {
+
     }
 
     public void StartSurvey1()
@@ -87,35 +113,35 @@ public class Measures : MonoBehaviour
 
     public void Button1()
     {
-        AddAnswer(1, "Too Easy");
+        Response1 = "Too Easy";
         StartSurvey2();
     }
 
     public void Button2()
     {
-        AddAnswer(1, "Just Right");
+        Response1 = "Just Right";
         StartSurvey2();
     }
 
     public void Button3()
     {
-        AddAnswer(1, "Too Hard");
+        Response1 = "Too Hard";
         StartSurvey2();
     }
 
     public void Button4()
     {
-        AddAnswer(2, "Frustrated");
+        Response2 = "Frustrated";
         EndSurvey();
     }
     public void Button5()
     {
-        AddAnswer(2, "Neutral/Flow");
+        Response2 = "Neutral/Flow";
         EndSurvey();
     }
     public void Button6()
     {
-        AddAnswer(2, "Bored");
+        Response2 = "Bored";
         EndSurvey();
     }
 }

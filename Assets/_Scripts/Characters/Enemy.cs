@@ -6,6 +6,7 @@ public class Enemy : CharacterBase
 {
     // SEE BASE CLASS! Lot of things are implemented there.
     protected GameObject _player;
+    protected GameObject _measureTracker;
     protected float _knockBackForce;
     protected float _knockBackTime;
     protected bool _inKnockBack = false;
@@ -31,6 +32,8 @@ public class Enemy : CharacterBase
     {
         _player = GameObject.Find("/Player");
         _player.GetComponent<Player>().AddEnemyPos(transform);
+        _measureTracker = GameObject.Find("/MeasureTracker");
+
     }
 
     protected Vector2 GetPlayerVector()
@@ -89,6 +92,7 @@ public class Enemy : CharacterBase
     {
         _player.GetComponent<Player>().RemoveEnemyPos(transform);
         GetComponent<ItemDropper>().DropItem(gameObject.transform.position);
+        _measureTracker.GetComponent<Measures>().EnemiesKilled++;
         Destroy(this.gameObject);
     }
 }

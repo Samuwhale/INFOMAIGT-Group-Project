@@ -2205,11 +2205,15 @@ MonoBehaviour:
   DamageTakenPerSecond: 0
   DamageDealt: 0
   DamageDealtPerSecond: 0
-  Accuracy: 0
-  TimeSpentOnWave: 0
   WavesCleared: 0
+  XPGained: 0
+  TotalXPGained: 0
+  IcestaffDam: 0
+  ScytheDam: 0
+  DaggerDam: 0
+  ForcefieldDam: 0
   participantID: 0
-  trialNr: 
+  trialNr: 0
   fileString: 
   surveyscreen1: {fileID: 1429421517813202210}
   surveyscreen2: {fileID: 4800267398533478670}

@@ -23,7 +23,7 @@ public abstract class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        level = 0;
+        level = -1;
     }
 
     private void InitializeWeaponValues()
@@ -48,6 +48,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void Activate()
     {
+        level = 0;
         InitializeWeaponValues();
         
         Debug.Log($"Weapon {this} activated, with attack power {weaponAttackPower} and attack delay {weaponAttackDelay}");
