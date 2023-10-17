@@ -1,3 +1,2 @@
-WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response20, 12, 58, 0, 0, 0, Too Hard, Frustrated
-0, 19, 6, 0, 0, 0, Just Right, Neutral/Flow
-0, 29, -72, 0, 0, 0, Just Right, Neutral/Flow
+WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2 
+0, 0, 25, 6.398468, 10, 2.559387, 0, 0, 0, 0, 0, 1, 10, 2.559387, 0, 0, 0, 0, 0, 0, 100, 75, 100, 100, 0, 200, Slightly too easy, Very bored

@@ -149,9 +149,21 @@ public class Measures : MonoBehaviour
         fileString += $"Question {question} answer: {answer}\n";
     }
 
+    public void Button0()
+    {
+        Response1 = "Way too easy";
+        StartSurvey2();
+    }
+
     public void Button1()
     {
         Response1 = "Too Easy";
+        StartSurvey2();
+    }
+
+    public void Button1_5()
+    {
+        Response1 = "Slightly too easy";
         StartSurvey2();
     }
 
@@ -161,15 +173,35 @@ public class Measures : MonoBehaviour
         StartSurvey2();
     }
 
-    public void Button3()
+    public void Button2_5()
     {
-        Response1 = "Too Hard";
+        Response1 = "Slightly too challenging";
         StartSurvey2();
     }
 
+    public void Button3()
+    {
+        Response1 = "Too challenging";
+        StartSurvey2();
+    }
+    public void Button3_5()
+    {
+        Response1 = "Way too challenging";
+        StartSurvey2();
+    }
+    public void Button3_6()
+    {
+        Response2 = "Very frustrated";
+        EndSurvey();
+    }
     public void Button4()
     {
         Response2 = "Frustrated";
+        EndSurvey();
+    }
+    public void Button4_5()
+    {
+        Response2 = "A little frustrated";
         EndSurvey();
     }
     public void Button5()
@@ -177,9 +209,19 @@ public class Measures : MonoBehaviour
         Response2 = "Neutral/Flow";
         EndSurvey();
     }
+    public void Button5_5()
+    {
+        Response2 = "A little bored";
+        EndSurvey();
+    }
     public void Button6()
     {
         Response2 = "Bored";
+        EndSurvey();
+    }
+    public void Button7()
+    {
+        Response2 = "Very bored";
         EndSurvey();
     }
 }
