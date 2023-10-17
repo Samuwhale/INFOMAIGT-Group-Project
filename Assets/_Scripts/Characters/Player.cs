@@ -148,7 +148,7 @@ public class Player : CharacterBase
             Egg _egg = collision.gameObject.GetComponent<Egg>();
             int damage = _egg.GetAttackPower() - (_defencePower / 10);
             TakeDamage(Mathf.Max(0, damage));
-            Destroy(_egg);
+            Destroy(_egg.gameObject);
         }
     }
 
