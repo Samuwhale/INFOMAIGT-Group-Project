@@ -52,7 +52,7 @@ public class Level : MonoBehaviour
     {
         StartCoroutine(ChooseUpgrade());
         level++;
-        levelUpExpNeeded = Mathf.RoundToInt(levelUpExpNeeded * 1.5f);
+        levelUpExpNeeded = Mathf.RoundToInt(levelUpExpNeeded * 1.2f);
         // update UI level
     }
 

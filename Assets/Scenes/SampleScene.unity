@@ -605,7 +605,7 @@ MonoBehaviour:
   _levelUpMenu: {fileID: 218792667}
   levelUpMenuOpen: 0
   currExp: 0
-  levelUpExpNeeded: 1
+  levelUpExpNeeded: 30
   button:
   - {fileID: 1966644087}
   - {fileID: 1041044364}
