@@ -11,7 +11,9 @@ public class IcicleProjectile : Projectile
     {
         animator = GetComponentInChildren<Animator>();
         player = GameObject.Find("/Player");
+        type = "icestaff";
     }
+
 
     private void Update()
     {

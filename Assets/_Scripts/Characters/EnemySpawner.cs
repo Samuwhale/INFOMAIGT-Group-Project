@@ -44,7 +44,11 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(wave.initialTime);
 
         // Do survey
-        if (wave.waveID != 0) tracker.GetComponent<Measures>().StartSurvey1();
+        if (wave.waveID != 0)
+        {
+            tracker.GetComponent<Measures>().WavesCleared++;
+            tracker.GetComponent<Measures>().StartSurvey1();
+        }
 
         Debug.Log("Starting wave " + wave.waveID);
 

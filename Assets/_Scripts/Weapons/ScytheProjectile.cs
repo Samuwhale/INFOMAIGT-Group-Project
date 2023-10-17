@@ -11,6 +11,7 @@ public class ScytheProjectile : Projectile
     private void Awake()
     {
         StartCoroutine(DestroyTimer());
+        type = "scythe";
     }
 
     private void Update()

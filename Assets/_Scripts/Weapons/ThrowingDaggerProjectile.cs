@@ -12,6 +12,7 @@ public class ThrowingDaggerProjectile : Projectile
     {
         ThrowBlade();
         StartCoroutine(DestroyTimer());
+        type = "dagger";
     }
 
     private void ThrowBlade()

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class timerScript : MonoBehaviour
 {
-    float Timer = 0f;
+    public float Timer = 0f;
     public TextMeshProUGUI timerText;
     // Update is called once per frame
     void Update()

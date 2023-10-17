@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : CharacterBase
@@ -85,7 +86,23 @@ public class Enemy : CharacterBase
         if (collision.gameObject.tag == "player weapon")
         {
             Projectile _projectile = collision.gameObject.GetComponent<Projectile>();
-            TakeDamage(_projectile.GetAttackPower());
+            int dam = _projectile.GetAttackPower();
+            switch (_projectile.GetType())
+            {
+                case "icestaff":
+                    _measureTracker.GetComponent<Measures>().IcestaffDam += dam;
+                    break;
+                case "scythe":
+                    _measureTracker.GetComponent<Measures>().ScytheDam += dam;
+                    break;
+                case "dagger":
+                    _measureTracker.GetComponent<Measures>().DaggerDam += dam;
+                    break;
+                case "forcefield":
+                    _measureTracker.GetComponent<Measures>().ForcefieldDam += dam;
+                    break;
+            }
+            TakeDamage(dam);
             ApplyKnockBack();
         }
     }

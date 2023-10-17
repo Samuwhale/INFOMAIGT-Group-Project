@@ -25,6 +25,8 @@ public class Level : MonoBehaviour
     private int ITEMMAXLEVEL = 5;
     private List<int> possible_ids;
 
+    public Measures measures;
+
     private void Awake()
     {
         level = 0;
@@ -42,6 +44,7 @@ public class Level : MonoBehaviour
             currExp -= levelUpExpNeeded;
             LevelUp();
         }
+        measures.XPGained += amount;
         // update UI exp slider
     }
 

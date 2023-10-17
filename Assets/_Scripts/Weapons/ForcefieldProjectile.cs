@@ -15,6 +15,7 @@ public class ForcefieldProjectile : Projectile
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        type = "forcefield";
     }
 
     private void Update()

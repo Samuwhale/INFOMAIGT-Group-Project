@@ -11,34 +11,41 @@ public class Measures : MonoBehaviour
 
     public int EnemiesKilled; //check
     public float DamageTaken; //check
-    public float DamageTakenPerSecond;
-    public float DamageDealt;
-    public float DamageDealtPerSecond;
-    //public float Accuracy;
-    //public float TimeSpentOnWave;
-    public int WavesCleared;
-    public int XPGained;
-    public int TotalXPGained;
-    public int IcestaffDam;
-    public int ScytheDam;
-    public int DaggerDam;
-    public int ForcefieldDam;
-
+    private float DamageTakenPerSecond; //check
+    private float DamageDealt; //check
+    private float DamageDealtPerSecond; //check
+    public int WavesCleared; //check
+    public int XPGained; //checks
+    private int TotalXPGained = 0; //check
+    public int IcestaffDam; //check
+    public int ScytheDam; //check
+    public int DaggerDam; //check
+    public int ForcefieldDam; //check
+    private float IcestaffDPS; //check
+    private float ScytheDPS; //check
+    private float DaggerDPS; //check
+    private float ForcefieldDPS; //check
+    //stats;                    //check
     private string Response1; //check
     private string Response2; //check
 
     public string participantID = "0";
     public string trialNr = "0";
-    public string fileString;
+    private string fileString;
 
     public Image surveyscreen1;
     public Image surveyscreen2;
+    public timerScript timerScript;
+    public GameObject player;
+
+    float lastTime = 0f;
+    float timeDiff;
 
     public void Start()
     {
         fileString += "WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, " +
             "IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, " +
-            "maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2";
+            "maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2 \n";
     }
 
     public void WriteFile()
@@ -61,6 +68,28 @@ public class Measures : MonoBehaviour
         AddMeasure(DamageTakenPerSecond.ToString());
         AddMeasure(DamageDealt.ToString());
         AddMeasure(DamageDealtPerSecond.ToString());
+        AddMeasure(XPGained.ToString());
+        AddMeasure(TotalXPGained.ToString());
+
+        AddMeasure(player.GetComponent<IceStaff>().level.ToString());
+        AddMeasure(IcestaffDam.ToString());
+        AddMeasure(IcestaffDPS.ToString());
+        AddMeasure(player.GetComponent<Scythe>().level.ToString());
+        AddMeasure(ScytheDam.ToString());
+        AddMeasure(ScytheDPS.ToString());
+        AddMeasure(player.GetComponent<ThrowingDagger>().level.ToString());
+        AddMeasure(DaggerDam.ToString());
+        AddMeasure(DaggerDPS.ToString());
+        AddMeasure(player.GetComponent<Forcefield>().level.ToString());
+        AddMeasure(ForcefieldDam.ToString());
+        AddMeasure(ForcefieldDPS.ToString());
+
+        AddMeasure(player.GetComponent<Player>().GetMaxHealth().ToString());
+        AddMeasure(player.GetComponent<Player>().GetCurrentHealth().ToString());
+        AddMeasure(player.GetComponent<Player>().GetAttackPower().ToString());
+        AddMeasure(player.GetComponent<Player>().GetAttackSpeed().ToString());
+        AddMeasure(player.GetComponent<Player>().GetDefencePower().ToString());
+        AddMeasure(player.GetComponent<Player>().GetMovementSpeed().ToString());
 
         AddMeasure(Response1);
         AddMeasure(Response2);
@@ -72,11 +101,20 @@ public class Measures : MonoBehaviour
         DaggerDam = 0;
         ForcefieldDam = 0;
         XPGained = 0;
+        lastTime = timerScript.Timer;
     }
 
     public void CalculateMeasures()
     {
-
+        timeDiff = timerScript.Timer - lastTime;
+        DamageTakenPerSecond = DamageTaken / timeDiff;
+        DamageDealt = IcestaffDam + ScytheDam + DaggerDam + ForcefieldDam;
+        DamageDealtPerSecond = DamageDealt / timeDiff;
+        IcestaffDPS = IcestaffDam / timeDiff;
+        ScytheDPS = ScytheDam / timeDiff;
+        DaggerDPS = DaggerDam / timeDiff;
+        ForcefieldDPS = ForcefieldDam / timeDiff;
+        TotalXPGained += XPGained;
     }
 
     public void StartSurvey1()

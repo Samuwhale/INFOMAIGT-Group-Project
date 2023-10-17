@@ -630,6 +630,7 @@ MonoBehaviour:
   - {fileID: 1092405621}
   - {fileID: 2046298797}
   - {fileID: 1433200979}
+  measures: {fileID: 898325327}
 --- !u!114 &42304452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,9 +1423,10 @@ MonoBehaviour:
   NumEnemies: 0
   waveList:
   - waveID: 0
-    waveSize: 5
-    spawnBuffer: 10
     initialTime: 0
+    spawnBuffer: 10
+    waveSize: 5
+    spawnChance: 0
 --- !u!1 &248121985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,21 +2209,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemiesKilled: 0
   DamageTaken: 0
-  DamageTakenPerSecond: 0
-  DamageDealt: 0
-  DamageDealtPerSecond: 0
   WavesCleared: 0
   XPGained: 0
-  TotalXPGained: 0
   IcestaffDam: 0
   ScytheDam: 0
   DaggerDam: 0
   ForcefieldDam: 0
   participantID: 0
   trialNr: 0
-  fileString: 
   surveyscreen1: {fileID: 1429421517813202210}
   surveyscreen2: {fileID: 4800267398533478670}
+  timerScript: {fileID: 1886126177}
+  player: {fileID: 42304442}
 --- !u!1 &1041044362
 GameObject:
   m_ObjectHideFlags: 0
@@ -41422,6 +41421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580160677838a0546bfa27007381fb84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: 0
   timerText: {fileID: 1886126178}
 --- !u!114 &1886126178
 MonoBehaviour:
