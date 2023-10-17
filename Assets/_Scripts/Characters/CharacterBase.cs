@@ -29,26 +29,40 @@ public class CharacterBase : MonoBehaviour
         _attackSpeed = _initialAttackSpeed;
         _defencePower = _initialDefencePower;
         _movementSpeed = _initialMovementSpeed;
-        
-        hp_bar.SetMaxHealth(_maxHealth);
-        hp_bar.SetHealth(_currentHealth);
+
+        if (hp_bar != null)
+        {
+            hp_bar.SetMaxHealth(_maxHealth);
+            hp_bar.SetHealth(_currentHealth);
+        }
     }
 
     
     public virtual void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        
         if (_currentHealth <= 0)
         {
             Die();
         }
         
-        hp_bar.SetHealth(_currentHealth);
+        if (hp_bar != null)
+        {
+            hp_bar.SetMaxHealth(_maxHealth);
+            hp_bar.SetHealth(_currentHealth);
+        }
+
     }
     
     public void IncreaseMaxHealth(int amount)
     {
         _maxHealth += amount;
+        if (hp_bar != null)
+        {
+            hp_bar.SetMaxHealth(_maxHealth);
+            hp_bar.SetHealth(_currentHealth);
+        }
     }
     
     public virtual void IncreaseAttackPower(int amount)

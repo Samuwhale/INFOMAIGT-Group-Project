@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject Chicken;
     public GameObject Cow;
     public int NumEnemies = 0;
+    private bool WavesEnded = false;
 
     [System.Serializable] public class Wave
     {
@@ -29,6 +30,17 @@ public class EnemySpawner : MonoBehaviour
     {
         tracker = GameObject.Find("MeasureTracker");
         SetupWaves();
+    }
+
+    private void Update()
+    {
+        if (WavesEnded)
+            if (NumEnemies <= 0)
+            {
+                // VICTORY!!!
+                tracker.GetComponent<Measures>().StartSurvey1();
+            }
+
     }
 
     void SetupWaves()
@@ -60,6 +72,8 @@ public class EnemySpawner : MonoBehaviour
             timer += wave.spawnBuffer;
             yield return new WaitForSeconds(wave.spawnBuffer);
         }
+
+        if (wave.waveID == 4) tracker.GetComponent<Measures>().StartSurvey1(); // Finish Game
     }
 
     private void SpawnRandomEnemy(float spawnChance)

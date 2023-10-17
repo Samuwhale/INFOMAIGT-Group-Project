@@ -136,15 +136,16 @@ MonoBehaviour:
   _attackPower: 0
   _movementSpeed: 0
   hp_bar: {fileID: 503432053967120084}
-  _initialHealth: 20
+  _initialHealth: 15
   _initialAttackPower: 10
-  _initialAttackSpeed: 1
+  _initialAttackSpeed: 2
   _initialDefencePower: 100
-  _initialMovementSpeed: 150
+  _initialMovementSpeed: 135
   _initialKnockBackForce: 5
-  _initialKnockBackTime: 0.5
+  _initialKnockBackTime: 0.2
   Egg: {fileID: 6975377070533058402, guid: eb2d28275f4865042a04769376ab04f9, type: 3}
   _initialShootingDistance: 8
+  _initialFleeDistance: 2
 --- !u!114 &390886750485670268
 MonoBehaviour:
   m_ObjectHideFlags: 0

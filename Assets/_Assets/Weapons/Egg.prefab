@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 3
-  speed: 500
+  speed: 300
   dir: {x: 0, y: 0}
 --- !u!58 &5462189103179300748
 CircleCollider2D:

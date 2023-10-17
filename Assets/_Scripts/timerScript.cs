@@ -11,6 +11,10 @@ public class timerScript : MonoBehaviour
     void Update()
     {
         Timer += Time.deltaTime;
-        timerText.text = Timer.ToString();
+
+        // Format timer into MM:SS:SS
+        int minutes = Mathf.FloorToInt(Timer / 60F);
+        int seconds = Mathf.FloorToInt(Timer - minutes * 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

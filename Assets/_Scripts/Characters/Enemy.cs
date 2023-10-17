@@ -15,7 +15,7 @@ public class Enemy : CharacterBase
     private Rigidbody2D _rigidbody2D;
 
     [SerializeField] protected float _initialKnockBackForce = 2;
-    [SerializeField] protected float _initialKnockBackTime = 0.5f;
+    [SerializeField] protected float _initialKnockBackTime = 0.1f;
 
     protected override void Awake()
     {
@@ -72,11 +72,9 @@ public class Enemy : CharacterBase
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "player" || collision.gameObject.tag == "Player")
         {
             ApplyKnockBack();
-            //TakeDamage(100);
         }
     }
 
