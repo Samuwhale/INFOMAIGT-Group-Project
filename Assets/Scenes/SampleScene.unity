@@ -554,7 +554,7 @@ MonoBehaviour:
   _initialHealth: 100
   _initialAttackPower: 100
   _initialAttackSpeed: 100
-  _initialDefencePower: 100
+  _initialDefencePower: 0
   _initialMovementSpeed: 200
   gameoverscreen: {fileID: 645376144}
   measures: {fileID: 898325327}
@@ -1422,9 +1422,30 @@ MonoBehaviour:
   NumEnemies: 0
   waveList:
   - waveID: 0
-    waveSize: 5
-    spawnBuffer: 10
     initialTime: 0
+    spawnBuffer: 10
+    waveSize: 5
+    spawnChance: 0.9
+  - waveID: 1
+    initialTime: 60
+    spawnBuffer: 8
+    waveSize: 10
+    spawnChance: 0.8
+  - waveID: 2
+    initialTime: 120
+    spawnBuffer: 6
+    waveSize: 20
+    spawnChance: 0.7
+  - waveID: 3
+    initialTime: 180
+    spawnBuffer: 4
+    waveSize: 30
+    spawnChance: 0.7
+  - waveID: 4
+    initialTime: 240
+    spawnBuffer: 2
+    waveSize: 40
+    spawnChance: 0.7
 --- !u!1 &248121985
 GameObject:
   m_ObjectHideFlags: 0

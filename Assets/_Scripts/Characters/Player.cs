@@ -114,6 +114,8 @@ public class Player : CharacterBase
     {
         base.TakeDamage(damage);
         measures.DamageTaken += damage;
+
+        Debug.Log("Took " + damage + " damage");
     }
 
     public override void Die()
@@ -128,7 +130,8 @@ public class Player : CharacterBase
         if (collision.gameObject.tag == "enemy")
         {
             Enemy _enemy = collision.gameObject.GetComponent<Enemy>();
-            TakeDamage(_enemy.GetAttackPower());
+            int damage = _enemy.GetAttackPower() - (_defencePower / 10);
+            TakeDamage(Mathf.Max(0, damage));
         }
     }
 
@@ -136,8 +139,10 @@ public class Player : CharacterBase
     {
         if (collision.gameObject.tag == "enemy weapon")
         {
-            TakeDamage(10);
-            Debug.Log("Took projectile damage, base 10");
+            Egg _egg = collision.gameObject.GetComponent<Egg>();
+            int damage = _egg.GetAttackPower() - (_defencePower / 10);
+            TakeDamage(Mathf.Max(0, damage));
+            Destroy(_egg);
         }
     }
 }

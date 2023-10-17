@@ -142,7 +142,7 @@ MonoBehaviour:
   _initialDefencePower: 100
   _initialMovementSpeed: 150
   _initialKnockBackForce: 5
-  _initialKnockBackTime: 0.5
+  _initialKnockBackTime: 0.2
   Egg: {fileID: 6975377070533058402, guid: eb2d28275f4865042a04769376ab04f9, type: 3}
   _initialShootingDistance: 8
 --- !u!114 &390886750485670268

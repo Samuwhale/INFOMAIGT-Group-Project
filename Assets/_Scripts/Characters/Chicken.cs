@@ -6,20 +6,28 @@ public class Chicken : Enemy
 {
     // Start is called before the first frame update
     private float _shootingDistance;
+    private float _fleeDistance;
     private bool justShot;
     [SerializeField] private Transform Egg;
 
     [SerializeField] float _initialShootingDistance = 5;
+    [SerializeField] float _initialFleeDistance = 2;
 
     protected override void Awake()
     {
         base.Awake();
         _shootingDistance = _initialShootingDistance;
+        _fleeDistance = _initialFleeDistance;
     }
 
     private float GetShootingDistance()
     {
         return _shootingDistance;
+    }
+
+    private float GetFleeDistance()
+    {
+        return _fleeDistance;
     }
 
     private void ShootEgg()
@@ -51,7 +59,15 @@ public class Chicken : Enemy
                 return;
             }
 
-            this.MoveCharacter(0, 0);
+            if (GetPlayerVector().magnitude < GetFleeDistance())
+            {
+                Vector2 dir = GetPlayerDirection();
+
+                this.MoveCharacter(-dir.x, -dir.y);
+                return;
+            }
+
+                this.MoveCharacter(0, 0);
 
             if (!justShot)
             {

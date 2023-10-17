@@ -58,7 +58,7 @@ MonoBehaviour:
   _initialDefencePower: 100
   _initialMovementSpeed: 125
   _initialKnockBackForce: 5
-  _initialKnockBackTime: 0.5
+  _initialKnockBackTime: 0.2
 --- !u!114 &7727027020559117145
 MonoBehaviour:
   m_ObjectHideFlags: 0
