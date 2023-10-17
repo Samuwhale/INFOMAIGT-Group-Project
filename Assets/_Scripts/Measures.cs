@@ -151,77 +151,77 @@ public class Measures : MonoBehaviour
 
     public void Button0()
     {
-        Response1 = "Way too easy";
+        Response1 = "1";
         StartSurvey2();
     }
 
     public void Button1()
     {
-        Response1 = "Too Easy";
+        Response1 = "2";
         StartSurvey2();
     }
 
     public void Button1_5()
     {
-        Response1 = "Slightly too easy";
+        Response1 = "3";
         StartSurvey2();
     }
 
     public void Button2()
     {
-        Response1 = "Just Right";
+        Response1 = "4";
         StartSurvey2();
     }
 
     public void Button2_5()
     {
-        Response1 = "Slightly too challenging";
+        Response1 = "5";
         StartSurvey2();
     }
 
     public void Button3()
     {
-        Response1 = "Too challenging";
+        Response1 = "6";
         StartSurvey2();
     }
     public void Button3_5()
     {
-        Response1 = "Way too challenging";
+        Response1 = "7";
         StartSurvey2();
     }
     public void Button3_6()
     {
-        Response2 = "Very frustrated";
+        Response2 = "1";
         EndSurvey();
     }
     public void Button4()
     {
-        Response2 = "Frustrated";
+        Response2 = "2";
         EndSurvey();
     }
     public void Button4_5()
     {
-        Response2 = "A little frustrated";
+        Response2 = "3";
         EndSurvey();
     }
     public void Button5()
     {
-        Response2 = "Neutral/Flow";
+        Response2 = "4";
         EndSurvey();
     }
     public void Button5_5()
     {
-        Response2 = "A little bored";
+        Response2 = "5";
         EndSurvey();
     }
     public void Button6()
     {
-        Response2 = "Bored";
+        Response2 = "6";
         EndSurvey();
     }
     public void Button7()
     {
-        Response2 = "Very bored";
+        Response2 = "7";
         EndSurvey();
     }
 }
