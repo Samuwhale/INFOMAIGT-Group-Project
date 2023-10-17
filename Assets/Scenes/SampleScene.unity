@@ -560,6 +560,7 @@ MonoBehaviour:
   measures: {fileID: 898325327}
   enemyList: []
   isAlive: 0
+  invinsibleTime: 0.1
 --- !u!114 &42304449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +631,7 @@ MonoBehaviour:
   - {fileID: 1092405621}
   - {fileID: 2046298797}
   - {fileID: 1433200979}
-  measures: {fileID: 0}
+  measures: {fileID: 898325327}
 --- !u!114 &42304452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45997,7 +45998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5923429155226523062
 MonoBehaviour:
   m_ObjectHideFlags: 0

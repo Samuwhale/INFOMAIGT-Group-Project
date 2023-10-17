@@ -16,6 +16,8 @@ public class Player : CharacterBase
     public List<Transform> enemyList; // Somehow it breaks if it is not public
 
     public bool isAlive;
+    [SerializeField] private float invinsibleTime = 0.1f;
+    private bool invinsible = false;
 
     protected override void Awake()
     {
@@ -112,8 +114,12 @@ public class Player : CharacterBase
 
     public override void TakeDamage(int damage)
     {
+        if (invinsible)
+            return;
+
         base.TakeDamage(damage);
         measures.DamageTaken += damage;
+        StartCoroutine(InvinsibleTime());
 
         Debug.Log("Took " + damage + " damage");
     }
@@ -144,5 +150,12 @@ public class Player : CharacterBase
             TakeDamage(Mathf.Max(0, damage));
             Destroy(_egg);
         }
+    }
+
+    IEnumerator InvinsibleTime()
+    {
+        invinsible = true;
+        yield return new WaitForSeconds(invinsibleTime);
+        invinsible = false;
     }
 }
