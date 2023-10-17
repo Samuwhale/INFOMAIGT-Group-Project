@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0fa6b4cf8e2ad4b8c161f34ad7e398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 3
+  destroyDelay: 6
   speed: 300
+  _attackPower: 10
   dir: {x: 0, y: 0}
 --- !u!58 &5462189103179300748
 CircleCollider2D:
