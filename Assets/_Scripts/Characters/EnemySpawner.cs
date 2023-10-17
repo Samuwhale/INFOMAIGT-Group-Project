@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject Cow;
     public int NumEnemies = 0;
     private bool WavesEnded = false;
+    public GameObject WinScreen;
+
+    private bool victory = false;
 
     [System.Serializable] public class Wave
     {
@@ -40,7 +43,11 @@ public class EnemySpawner : MonoBehaviour
                 // VICTORY!!!
                 tracker.GetComponent<Measures>().StartSurvey1();
             }
-
+        if (victory)
+        {
+            WinScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     void SetupWaves()
@@ -73,7 +80,11 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(wave.spawnBuffer);
         }
 
-        if (wave.waveID == 4) tracker.GetComponent<Measures>().StartSurvey1(); // Finish Game
+        if (wave.waveID == 4) // last wave
+        {
+            tracker.GetComponent<Measures>().StartSurvey1();
+            victory = true; // Finish Game (The end of the survey will set the timescale to 1, so the victory screen is moved to the update function)
+        }
     }
 
     private void SpawnRandomEnemy(float spawnChance)
