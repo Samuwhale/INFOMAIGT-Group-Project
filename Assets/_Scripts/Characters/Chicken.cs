@@ -13,11 +13,14 @@ public class Chicken : Enemy
     [SerializeField] float _initialShootingDistance = 5;
     [SerializeField] float _initialFleeDistance = 2;
 
+    private SpriteRenderer spriteRenderer;
+
     protected override void Awake()
     {
         base.Awake();
         _shootingDistance = _initialShootingDistance;
         _fleeDistance = _initialFleeDistance;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private float GetShootingDistance()
@@ -33,7 +36,14 @@ public class Chicken : Enemy
     private void ShootEgg()
     {
         Transform eggTransform = Instantiate(Egg, this.transform.position, Quaternion.identity);
-        eggTransform.GetComponent<Egg>().SetDirection(GetPlayerDirection());
+
+        Vector2 dir = GetPlayerDirection();
+        eggTransform.GetComponent<Egg>().SetDirection(dir);
+
+        if (dir.x < 0)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
 
         StartCoroutine(ShootDelay());
         return;
@@ -56,6 +66,11 @@ public class Chicken : Enemy
                 Vector2 dir = GetPlayerDirection();
 
                 this.MoveCharacter(dir.x, dir.y);
+
+                if (dir.x < 0)
+                    spriteRenderer.flipX = true;
+                else
+                    spriteRenderer.flipX = false;
                 return;
             }
 
@@ -64,10 +79,15 @@ public class Chicken : Enemy
                 Vector2 dir = GetPlayerDirection();
 
                 this.MoveCharacter(-dir.x, -dir.y);
+
+                if (dir.x < 0)
+                    spriteRenderer.flipX = false;
+                else
+                    spriteRenderer.flipX = true;
                 return;
             }
 
-                this.MoveCharacter(0, 0);
+            this.MoveCharacter(0, 0);
 
             if (!justShot)
             {

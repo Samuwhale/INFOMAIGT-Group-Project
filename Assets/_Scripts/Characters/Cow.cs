@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Cow : Enemy
 {
+    private SpriteRenderer spriteRenderer;
+
     protected override void Awake()
     {
         base.Awake();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -17,6 +20,11 @@ public class Cow : Enemy
             Vector2 dir = GetPlayerDirection();
 
             this.MoveCharacter(dir.x, dir.y);
+
+            if (dir.x < 0)
+                spriteRenderer.flipX = true;
+            else 
+                spriteRenderer.flipX = false;
         }
     }
 }
