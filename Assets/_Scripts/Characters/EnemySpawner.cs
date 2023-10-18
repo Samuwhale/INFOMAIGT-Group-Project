@@ -45,7 +45,6 @@ public class EnemySpawner : MonoBehaviour
             }
         if (victory)
         {
-            tracker.GetComponent<Measures>().WriteFile();
             WinScreen.SetActive(true);
             Time.timeScale = 0f;
         }
