@@ -138,10 +138,10 @@ public class Measures : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Comma))
-        {
-            StartSurvey1();
-        }
+        // if (Input.GetKeyDown(KeyCode.Comma))
+        // {
+        //     StartSurvey1();
+        // }
     }
 
     public void AddAnswer(int question,string answer)
