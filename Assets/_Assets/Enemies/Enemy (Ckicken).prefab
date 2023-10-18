@@ -141,6 +141,8 @@ MonoBehaviour:
   _initialAttackSpeed: 2
   _initialDefencePower: 100
   _initialMovementSpeed: 135
+  _damageFlashDuration: 0.1
+  _spriteRenderer: {fileID: 3423600024547930442}
   _initialKnockBackForce: 5
   _initialKnockBackTime: 0.2
   Egg: {fileID: 6975377070533058402, guid: eb2d28275f4865042a04769376ab04f9, type: 3}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterBase : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected int _initialDefencePower = 100;
     [SerializeField] protected int _initialMovementSpeed = 2500;
 
+    [SerializeField] private float _damageFlashDuration = 0.2f;
+    [SerializeField] SpriteRenderer _spriteRenderer;
 
     protected virtual void Awake()
     {
@@ -29,7 +32,7 @@ public class CharacterBase : MonoBehaviour
         _attackSpeed = _initialAttackSpeed;
         _defencePower = _initialDefencePower;
         _movementSpeed = _initialMovementSpeed;
-
+        
         if (hp_bar != null)
         {
             hp_bar.SetMaxHealth(_maxHealth);
@@ -46,6 +49,10 @@ public class CharacterBase : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            StartCoroutine(DamageFlash());
+        }
         
         if (hp_bar != null)
         {
@@ -53,6 +60,17 @@ public class CharacterBase : MonoBehaviour
             hp_bar.SetHealth(_currentHealth);
         }
 
+    }
+    
+    IEnumerator DamageFlash()
+    {
+        Color defaultColor = _spriteRenderer.color;
+        
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(_damageFlashDuration);
+
+        
+        _spriteRenderer.color = defaultColor;
     }
     
     public void IncreaseMaxHealth(int amount)

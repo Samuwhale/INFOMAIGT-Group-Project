@@ -120,6 +120,7 @@ public class Player : CharacterBase
         base.TakeDamage(damage);
         measures.DamageTaken += damage;
         StartCoroutine(InvinsibleTime());
+        
 
         Debug.Log("Took " + damage + " damage");
     }
@@ -158,4 +159,6 @@ public class Player : CharacterBase
         yield return new WaitForSeconds(invinsibleTime);
         invinsible = false;
     }
+    
+
 }

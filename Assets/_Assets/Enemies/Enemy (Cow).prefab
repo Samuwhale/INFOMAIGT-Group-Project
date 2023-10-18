@@ -57,6 +57,8 @@ MonoBehaviour:
   _initialAttackSpeed: 100
   _initialDefencePower: 100
   _initialMovementSpeed: 120
+  _damageFlashDuration: 0.1
+  _spriteRenderer: {fileID: 84214695399606066}
   _initialKnockBackForce: 5
   _initialKnockBackTime: 0.2
 --- !u!114 &7727027020559117145
