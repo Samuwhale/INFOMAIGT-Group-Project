@@ -43,15 +43,26 @@ public class Measures : MonoBehaviour
 
     public void Start()
     {
-        fileString += "WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, " +
+        if (!System.IO.File.Exists(path + $"/data_participant{participantID}-tn{trialNr}.txt"))
+        {
+            fileString += "WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, " +
             "IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, " +
             "maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2 \n";
+        }
     }
 
     public void WriteFile()
     {
-        System.IO.File.WriteAllText(path + $"/data_participant{participantID}-tn{trialNr}.txt", fileString);
-        Debug.Log("Created file at " + path);
+        if (System.IO.File.Exists(path + $"/data_participant{participantID}-tn{trialNr}.txt"))
+        {
+            System.IO.File.AppendAllText(path + $"/data_participant{participantID}-tn{trialNr}.txt", fileString);
+            Debug.Log("Appended file at " + path);
+        }
+        else
+        {
+            System.IO.File.WriteAllText(path + $"/data_participant{participantID}-tn{trialNr}.txt", fileString);
+            Debug.Log("Created file at " + path);
+        }
     }
 
     public void AddMeasure(string number)

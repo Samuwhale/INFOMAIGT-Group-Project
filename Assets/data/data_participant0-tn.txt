@@ -1,3 +1,0 @@
-WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeedQuestion 1 answer: Just Right
-Question 2 answer: Neutral/Flow
-0, 0, 50, 0, 0, 0

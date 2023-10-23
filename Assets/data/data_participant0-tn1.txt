@@ -1,2 +1,0 @@
-WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2 
-0, 1, 60, 4.431747, 20, 1.477249, 10, 10, 0, 0, 0, 1, 20, 1.477249, 0, 0, 0, 0, 0, 0, 110, 40, 110, 100, 100, 200, Just Right, Bored

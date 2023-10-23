@@ -1,0 +1,6 @@
+WavesCleared, EnemiesKilled, DamageTaken, DamageTakenPerSecond, DamageDealt, DamageDealtPerSecond, XPGained, TotalXPGained, IcestaffLevel, IcestaffDam, IcestaffDPS, ScytheLevel, ScytheDam, ScytheDPS, DaggerLevel, DaggerDam, DaggerDPS, ForcefieldLevel, ForcefieldDam, ForcefiledDPS, maxHealth, currentHealth, attackPower, attackSpeed, defensePower, movementSpeed, Response1, Response2 
+1, 20, 50, 0.8267606, 600, 9.921128, 200, 200, 2, 140, 2.31493, 1, 280, 4.62986, 1, 180, 2.976338, 0, 0, 0, 100, 50, 100, 100, 0, 260, 2, 2
+2, 29, 38, 0.63345, 955, 15.9196, 260, 460, 3, 355, 5.917757, 1, 120, 2.000368, 2, 480, 8.001473, 0, 0, 0, 110, 12, 100, 100, 10, 260, 5, 5
+3, 51, -31, -0.5166458, 1525, 25.41564, 400, 860, 3, 375, 6.249747, 1, 310, 5.166458, 3, 840, 13.99943, 0, 0, 0, 130, 43, 100, 100, 10, 300, 5, 5
+4, 87, -85, -1.416592, 2450, 40.83118, 580, 1440, 4, 690, 11.49939, 1, 120, 1.999895, 4, 1640, 27.33189, 0, 0, 0, 130, 128, 100, 100, 10, 300, 5, 5
+1, 28, 75, 1.244608, 870, 14.43746, 280, 280, 0, 0, 0, 1, 660, 10.95255, 2, 30, 0.4978433, 1, 180, 2.98706, 110, 25, 110, 100, 0, 260, 4, 4
